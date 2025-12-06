@@ -1,0 +1,461 @@
+<html lang="en"><head>
+
+<script class="injected-ffc2e83d85">
+(function(){'use strict';function q(b){var c=0;return function(){return c<b.length?{done:!1,value:b[c++]}:{done:!0}}}function t(b){var c=typeof Symbol!="undefined"&&Symbol.iterator&&b[Symbol.iterator];if(c)return c.call(b);if(typeof b.length=="number")return{next:q(b)};throw Error(String(b)+" is not an iterable or ArrayLike");}var u=typeof Object.defineProperties=="function"?Object.defineProperty:function(b,c,g){if(b==Array.prototype||b==Object.prototype)return b;b[c]=g.value;return b};
+function v(b){b=["object"==typeof globalThis&&globalThis,b,"object"==typeof window&&window,"object"==typeof self&&self,"object"==typeof global&&global];for(var c=0;c<b.length;++c){var g=b[c];if(g&&g.Math==Math)return g}throw Error("Cannot find global object");}var w=v(this);function x(b,c){if(c)a:{var g=w;b=b.split(".");for(var h=0;h<b.length-1;h++){var l=b[h];if(!(l in g))break a;g=g[l]}b=b[b.length-1];h=g[b];c=c(h);c!=h&&c!=null&&u(g,b,{configurable:!0,writable:!0,value:c})}}
+function y(){this.j=!1;this.g=null;this.u=void 0;this.h=1;this.v=this.l=0;this.i=null}function z(b){if(b.j)throw new TypeError("Generator is already running");b.j=!0}y.prototype.o=function(b){this.u=b};function A(b,c){b.i={I:c,J:!0};b.h=b.l||b.v}y.prototype.return=function(b){this.i={return:b};this.h=this.v};function B(b){this.g=new y;this.h=b}function E(b,c){z(b.g);var g=b.g.g;if(g)return F(b,"return"in g?g["return"]:function(h){return{value:h,done:!0}},c,b.g.return);b.g.return(c);return G(b)}
+function F(b,c,g,h){try{var l=c.call(b.g.g,g);if(!(l instanceof Object))throw new TypeError("Iterator result "+l+" is not an object");if(!l.done)return b.g.j=!1,l;var m=l.value}catch(f){return b.g.g=null,A(b.g,f),G(b)}b.g.g=null;h.call(b.g,m);return G(b)}function G(b){for(;b.g.h;)try{var c=b.h(b.g);if(c)return b.g.j=!1,{value:c.value,done:!1}}catch(g){b.g.u=void 0,A(b.g,g)}b.g.j=!1;if(b.g.i){c=b.g.i;b.g.i=null;if(c.J)throw c.I;return{value:c.return,done:!0}}return{value:void 0,done:!0}}
+function H(b){this.next=function(c){z(b.g);b.g.g?c=F(b,b.g.g.next,c,b.g.o):(b.g.o(c),c=G(b));return c};this.throw=function(c){z(b.g);b.g.g?c=F(b,b.g.g["throw"],c,b.g.o):(A(b.g,c),c=G(b));return c};this.return=function(c){return E(b,c)};this[Symbol.iterator]=function(){return this}}function I(b){function c(h){return b.next(h)}function g(h){return b.throw(h)}return new Promise(function(h,l){function m(f){f.done?h(f.value):Promise.resolve(f.value).then(c,g).then(m,l)}m(b.next())})}
+x("Symbol",function(b){function c(m){if(this instanceof c)throw new TypeError("Symbol is not a constructor");return new g(h+(m||"")+"_"+l++,m)}function g(m,f){this.g=m;u(this,"description",{configurable:!0,writable:!0,value:f})}if(b)return b;g.prototype.toString=function(){return this.g};var h="jscomp_symbol_"+(Math.random()*1E9>>>0)+"_",l=0;return c});
+x("Symbol.iterator",function(b){if(b)return b;b=Symbol("Symbol.iterator");u(Array.prototype,b,{configurable:!0,writable:!0,value:function(){return J(q(this))}});return b});function J(b){b={next:b};b[Symbol.iterator]=function(){return this};return b}
+x("Promise",function(b){function c(f){this.h=0;this.i=void 0;this.g=[];this.u=!1;var a=this.j();try{f(a.resolve,a.reject)}catch(d){a.reject(d)}}function g(){this.g=null}function h(f){return f instanceof c?f:new c(function(a){a(f)})}if(b)return b;g.prototype.h=function(f){if(this.g==null){this.g=[];var a=this;this.i(function(){a.l()})}this.g.push(f)};var l=w.setTimeout;g.prototype.i=function(f){l(f,0)};g.prototype.l=function(){for(;this.g&&this.g.length;){var f=this.g;this.g=[];for(var a=0;a<f.length;++a){var d=
+f[a];f[a]=null;try{d()}catch(e){this.j(e)}}}this.g=null};g.prototype.j=function(f){this.i(function(){throw f;})};c.prototype.j=function(){function f(e){return function(k){d||(d=!0,e.call(a,k))}}var a=this,d=!1;return{resolve:f(this.D),reject:f(this.l)}};c.prototype.D=function(f){if(f===this)this.l(new TypeError("A Promise cannot resolve to itself"));else if(f instanceof c)this.G(f);else{a:switch(typeof f){case "object":var a=f!=null;break a;case "function":a=!0;break a;default:a=!1}a?this.C(f):this.o(f)}};
+c.prototype.C=function(f){var a=void 0;try{a=f.then}catch(d){this.l(d);return}typeof a=="function"?this.H(a,f):this.o(f)};c.prototype.l=function(f){this.v(2,f)};c.prototype.o=function(f){this.v(1,f)};c.prototype.v=function(f,a){if(this.h!=0)throw Error("Cannot settle("+f+", "+a+"): Promise already settled in state"+this.h);this.h=f;this.i=a;this.h===2&&this.F();this.K()};c.prototype.F=function(){var f=this;l(function(){if(f.B()){var a=w.console;typeof a!=="undefined"&&a.error(f.i)}},1)};c.prototype.B=
+function(){if(this.u)return!1;var f=w.CustomEvent,a=w.Event,d=w.dispatchEvent;if(typeof d==="undefined")return!0;typeof f==="function"?f=new f("unhandledrejection",{cancelable:!0}):typeof a==="function"?f=new a("unhandledrejection",{cancelable:!0}):(f=w.document.createEvent("CustomEvent"),f.initCustomEvent("unhandledrejection",!1,!0,f));f.promise=this;f.reason=this.i;return d(f)};c.prototype.K=function(){if(this.g!=null){for(var f=0;f<this.g.length;++f)m.h(this.g[f]);this.g=null}};var m=new g;c.prototype.G=
+function(f){var a=this.j();f.A(a.resolve,a.reject)};c.prototype.H=function(f,a){var d=this.j();try{f.call(a,d.resolve,d.reject)}catch(e){d.reject(e)}};c.prototype.then=function(f,a){function d(n,r){return typeof n=="function"?function(C){try{e(n(C))}catch(D){k(D)}}:r}var e,k,p=new c(function(n,r){e=n;k=r});this.A(d(f,e),d(a,k));return p};c.prototype.catch=function(f){return this.then(void 0,f)};c.prototype.A=function(f,a){function d(){switch(e.h){case 1:f(e.i);break;case 2:a(e.i);break;default:throw Error("Unexpected state: "+
+e.h);}}var e=this;this.g==null?m.h(d):this.g.push(d);this.u=!0};c.resolve=h;c.reject=function(f){return new c(function(a,d){d(f)})};c.race=function(f){return new c(function(a,d){for(var e=t(f),k=e.next();!k.done;k=e.next())h(k.value).A(a,d)})};c.all=function(f){var a=t(f),d=a.next();return d.done?h([]):new c(function(e,k){function p(C){return function(D){n[C]=D;r--;r==0&&e(n)}}var n=[],r=0;do n.push(void 0),r++,h(d.value).A(p(n.length-1),k),d=a.next();while(!d.done)})};return c});
+function K(b,c){return Object.prototype.hasOwnProperty.call(b,c)}x("Object.is",function(b){return b?b:function(c,g){return c===g?c!==0||1/c===1/g:c!==c&&g!==g}});x("Array.prototype.includes",function(b){return b?b:function(c,g){var h=this;h instanceof String&&(h=String(h));var l=h.length;g=g||0;for(g<0&&(g=Math.max(g+l,0));g<l;g++){var m=h[g];if(m===c||Object.is(m,c))return!0}return!1}});
+x("String.prototype.includes",function(b){return b?b:function(c,g){if(this==null)throw new TypeError("The 'this' value for String.prototype.includes must not be null or undefined");if(c instanceof RegExp)throw new TypeError("First argument to String.prototype.includes must not be a regular expression");return this.indexOf(c,g||0)!==-1}});
+x("WeakMap",function(b){function c(d){this.g=(a+=Math.random()+1).toString();if(d){d=t(d);for(var e;!(e=d.next()).done;)e=e.value,this.set(e[0],e[1])}}function g(){}function h(d){var e=typeof d;return e==="object"&&d!==null||e==="function"}function l(d){if(!K(d,f)){var e=new g;u(d,f,{value:e})}}function m(d){var e=Object[d];e&&(Object[d]=function(k){if(k instanceof g)return k;Object.isExtensible(k)&&l(k);return e(k)})}if(function(){if(!b||!Object.seal)return!1;try{var d=Object.seal({}),e=Object.seal({}),
+k=new b([[d,2],[e,3]]);if(k.get(d)!=2||k.get(e)!=3)return!1;k.delete(d);k.set(e,4);return!k.has(d)&&k.get(e)==4}catch(p){return!1}}())return b;var f="$jscomp_hidden_"+Math.random();m("freeze");m("preventExtensions");m("seal");var a=0;c.prototype.set=function(d,e){if(!h(d))throw Error("Invalid WeakMap key");l(d);if(!K(d,f))throw Error("WeakMap key fail: "+d);d[f][this.g]=e;return this};c.prototype.get=function(d){return h(d)&&K(d,f)?d[f][this.g]:void 0};c.prototype.has=function(d){return h(d)&&K(d,
+f)&&K(d[f],this.g)};c.prototype.delete=function(d){return h(d)&&K(d,f)&&K(d[f],this.g)?delete d[f][this.g]:!1};return c});
+x("Map",function(b){function c(){var a={};return a.m=a.next=a.head=a}function g(a,d){var e=a[1];return J(function(){if(e){for(;e.head!=a[1];)e=e.m;for(;e.next!=e.head;)return e=e.next,{done:!1,value:d(e)};e=null}return{done:!0,value:void 0}})}function h(a,d){var e=d&&typeof d;e=="object"||e=="function"?m.has(d)?e=m.get(d):(e=""+ ++f,m.set(d,e)):e="p_"+d;var k=a[0][e];if(k&&K(a[0],e))for(a=0;a<k.length;a++){var p=k[a];if(d!==d&&p.key!==p.key||d===p.key)return{id:e,list:k,index:a,entry:p}}return{id:e,
+list:k,index:-1,entry:void 0}}function l(a){this[0]={};this[1]=c();this.size=0;if(a){a=t(a);for(var d;!(d=a.next()).done;)d=d.value,this.set(d[0],d[1])}}if(function(){if(!b||typeof b!="function"||!b.prototype.entries||typeof Object.seal!="function")return!1;try{var a=Object.seal({x:4}),d=new b(t([[a,"s"]]));if(d.get(a)!="s"||d.size!=1||d.get({x:4})||d.set({x:4},"t")!=d||d.size!=2)return!1;var e=d.entries(),k=e.next();if(k.done||k.value[0]!=a||k.value[1]!="s")return!1;k=e.next();return k.done||k.value[0].x!=
+4||k.value[1]!="t"||!e.next().done?!1:!0}catch(p){return!1}}())return b;var m=new WeakMap;l.prototype.set=function(a,d){a=a===0?0:a;var e=h(this,a);e.list||(e.list=this[0][e.id]=[]);e.entry?e.entry.value=d:(e.entry={next:this[1],m:this[1].m,head:this[1],key:a,value:d},e.list.push(e.entry),this[1].m.next=e.entry,this[1].m=e.entry,this.size++);return this};l.prototype.delete=function(a){a=h(this,a);return a.entry&&a.list?(a.list.splice(a.index,1),a.list.length||delete this[0][a.id],a.entry.m.next=a.entry.next,
+a.entry.next.m=a.entry.m,a.entry.head=null,this.size--,!0):!1};l.prototype.clear=function(){this[0]={};this[1]=this[1].m=c();this.size=0};l.prototype.has=function(a){return!!h(this,a).entry};l.prototype.get=function(a){return(a=h(this,a).entry)&&a.value};l.prototype.entries=function(){return g(this,function(a){return[a.key,a.value]})};l.prototype.keys=function(){return g(this,function(a){return a.key})};l.prototype.values=function(){return g(this,function(a){return a.value})};l.prototype.forEach=
+function(a,d){for(var e=this.entries(),k;!(k=e.next()).done;)k=k.value,a.call(d,k[1],k[0],this)};l.prototype[Symbol.iterator]=l.prototype.entries;var f=0;return l});
+x("Set",function(b){function c(g){this.g=new Map;if(g){g=t(g);for(var h;!(h=g.next()).done;)this.add(h.value)}this.size=this.g.size}if(function(){if(!b||typeof b!="function"||!b.prototype.entries||typeof Object.seal!="function")return!1;try{var g=Object.seal({x:4}),h=new b(t([g]));if(!h.has(g)||h.size!=1||h.add(g)!=h||h.size!=1||h.add({x:4})!=h||h.size!=2)return!1;var l=h.entries(),m=l.next();if(m.done||m.value[0]!=g||m.value[1]!=g)return!1;m=l.next();return m.done||m.value[0]==g||m.value[0].x!=4||
+m.value[1]!=m.value[0]?!1:l.next().done}catch(f){return!1}}())return b;c.prototype.add=function(g){g=g===0?0:g;this.g.set(g,g);this.size=this.g.size;return this};c.prototype.delete=function(g){g=this.g.delete(g);this.size=this.g.size;return g};c.prototype.clear=function(){this.g.clear();this.size=0};c.prototype.has=function(g){return this.g.has(g)};c.prototype.entries=function(){return this.g.entries()};c.prototype.values=function(){return this.g.values()};c.prototype.keys=c.prototype.values;c.prototype[Symbol.iterator]=
+c.prototype.values;c.prototype.forEach=function(g,h){var l=this;this.g.forEach(function(m){return g.call(h,m,m,l)})};return c});(function(){function b(){return m?Promise.resolve(m):f?f:f=fetch("https://www.gstatic.com/bard-maui/resources/material-design-icon-names.804824289.json").then(function(a){if(!a.ok)throw Error("HTTP error! status: "+a.status+" fetching https://www.gstatic.com/bard-maui/resources/material-design-icon-names.804824289.json");return a.json()}).then(function(a){if(!Array.isArray(a))throw new TypeError("Fetched icon names from https://www.gstatic.com/bard-maui/resources/material-design-icon-names.804824289.json is not an array.");
+return m=a}).catch(function(a){console.error("IconChecker: Failed to load valid icon names from https://www.gstatic.com/bard-maui/resources/material-design-icon-names.804824289.json.",a);f=null;throw a;})}function c(a){var d,e,k,p;return I(new H(new B(function(n){switch(n.h){case 1:d=(a.textContent||"").trim();if(!d||a.classList.contains("js-replaced-missing-icon")&&d==="radio_button_unchecked")return n.return();e=window.getComputedStyle(a);if(e.display==="none"||e.visibility==="hidden")return n.return();
+n.l=2;var r=b();n.h=4;return{value:r};case 4:k=n.u;n.h=3;n.l=0;break;case 2:return n.l=0,n.i=null,console.warn('IconChecker: Skipping check for icon "'+d+'" as valid names could not be loaded.'),n.return();case 3:(p=k.includes(d))?a.classList.contains("js-replaced-missing-icon")&&a.classList.remove("js-replaced-missing-icon"):d==="radio_button_unchecked"&&a.classList.contains("js-replaced-missing-icon")||(a.textContent="radio_button_unchecked",a.classList.add("js-replaced-missing-icon")),n.h=0}})))}
+function g(a){a=a===void 0?document.body:a;a.querySelectorAll(l).forEach(function(d){c(d)})}function h(){b().catch(function(){});document.fonts.ready.then(function(){requestAnimationFrame(function(){g(document.body);(new MutationObserver(function(a){var d=new Set;a=t(a);for(var e=a.next();!e.done;e=a.next())if(e=e.value,e.type==="childList")e.addedNodes.forEach(function(p){p.nodeType===Node.ELEMENT_NODE&&(p.matches(l)&&d.add(p),p.querySelectorAll(l).forEach(function(n){d.add(n)}))});else if(e.type===
+"attributes"&&e.attributeName==="class"){var k=e.target;e.target.nodeType===Node.ELEMENT_NODE&&k.matches(l)&&d.add(k)}else e.type==="characterData"&&e.target.parentNode&&(e=e.target.parentNode,e.nodeType===Node.ELEMENT_NODE&&e.matches(l)&&d.add(e));d.size>0&&setTimeout(function(){d.forEach(function(p){c(p)})},500)})).observe(document.body,{childList:!0,subtree:!0,attributes:!0,attributeFilter:["class"],characterData:!0})})}).catch(function(a){console.error("IconChecker: Font loading error. Scanning icons anyway.",
+a);requestAnimationFrame(function(){g(document.body)})})}var l=["material-icons","material-symbols-outlined","material-symbols-rounded","material-symbols-sharp"].map(function(a){return"."+a}).join(","),m=null,f=null;document.readyState==="loading"?document.addEventListener("DOMContentLoaded",function(){h()}):h()})();}).call(this);
+
+</script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Error Handling: The Safety Net</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&amp;family=Inter:wght@400;600;700;800&amp;display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,1,0" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .font-mono { font-family: 'Fira Code', monospace; }
+        
+        /* Animations */
+        @keyframes shake-crash {
+            0%, 100% { transform: translateX(0); }
+            10%, 30%, 50%, 70%, 90% { transform: translateX(-5px); }
+            20%, 40%, 60%, 80% { transform: translateX(5px); }
+        }
+        .crash-effect { animation: shake-crash 0.5s cubic-bezier(.36,.07,.19,.97) both; background-color: #fef2f2; border-color: #ef4444; }
+
+        .line-highlight { background-color: #fef08a; transition: background-color 0.2s; } /* Yellow-200 */
+        .line-error { background-color: #fca5a5 !important; } /* Red-300 */
+        .line-catch { background-color: #86efac !important; } /* Green-300 */
+
+        .packet-error {
+            background-color: #ef4444;
+            box-shadow: 0 0 15px rgba(239, 68, 68, 0.6);
+        }
+
+        /* Tooltip styling for Stack Trace */
+        .trace-line:hover { background-color: #374151; cursor: help; }
+        
+        @media print { .no-print { display: none; } }
+    </style>
+<style>*, ::before, ::after{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }::backdrop{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }/* ! tailwindcss v3.4.17 | MIT License | https://tailwindcss.com */*,::after,::before{box-sizing:border-box;border-width:0;border-style:solid;border-color:#e5e7eb}::after,::before{--tw-content:''}:host,html{line-height:1.5;-webkit-text-size-adjust:100%;-moz-tab-size:4;tab-size:4;font-family:ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";font-feature-settings:normal;font-variation-settings:normal;-webkit-tap-highlight-color:transparent}body{margin:0;line-height:inherit}hr{height:0;color:inherit;border-top-width:1px}abbr:where([title]){-webkit-text-decoration:underline dotted;text-decoration:underline dotted}h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit}a{color:inherit;text-decoration:inherit}b,strong{font-weight:bolder}code,kbd,pre,samp{font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;font-feature-settings:normal;font-variation-settings:normal;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}table{text-indent:0;border-color:inherit;border-collapse:collapse}button,input,optgroup,select,textarea{font-family:inherit;font-feature-settings:inherit;font-variation-settings:inherit;font-size:100%;font-weight:inherit;line-height:inherit;letter-spacing:inherit;color:inherit;margin:0;padding:0}button,select{text-transform:none}button,input:where([type=button]),input:where([type=reset]),input:where([type=submit]){-webkit-appearance:button;background-color:transparent;background-image:none}:-moz-focusring{outline:auto}:-moz-ui-invalid{box-shadow:none}progress{vertical-align:baseline}::-webkit-inner-spin-button,::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}blockquote,dd,dl,figure,h1,h2,h3,h4,h5,h6,hr,p,pre{margin:0}fieldset{margin:0;padding:0}legend{padding:0}menu,ol,ul{list-style:none;margin:0;padding:0}dialog{padding:0}textarea{resize:vertical}input::placeholder,textarea::placeholder{opacity:1;color:#9ca3af}[role=button],button{cursor:pointer}:disabled{cursor:default}audio,canvas,embed,iframe,img,object,svg,video{display:block;vertical-align:middle}img,video{max-width:100%;height:auto}[hidden]:where(:not([hidden=until-found])){display:none}.pointer-events-none{pointer-events:none}.fixed{position:fixed}.absolute{position:absolute}.relative{position:relative}.inset-0{inset:0px}.-top-12{top:-3rem}.bottom-6{bottom:1.5rem}.left-0{left:0px}.left-12{left:3rem}.right-12{right:3rem}.right-4{right:1rem}.right-6{right:1.5rem}.top-1\/2{top:50%}.top-4{top:1rem}.z-0{z-index:0}.z-10{z-index:10}.z-20{z-index:20}.z-50{z-index:50}.mx-auto{margin-left:auto;margin-right:auto}.-mt-8{margin-top:-2rem}.mb-2{margin-bottom:0.5rem}.mb-4{margin-bottom:1rem}.mb-6{margin-bottom:1.5rem}.mb-8{margin-bottom:2rem}.mt-1{margin-top:0.25rem}.mt-12{margin-top:3rem}.mt-2{margin-top:0.5rem}.mt-3{margin-top:0.75rem}.mt-6{margin-top:1.5rem}.mt-8{margin-top:2rem}.flex{display:flex}.inline-flex{display:inline-flex}.grid{display:grid}.hidden{display:none}.h-10{height:2.5rem}.h-16{height:4rem}.h-2{height:0.5rem}.h-24{height:6rem}.h-48{height:12rem}.h-64{height:16rem}.w-10{width:2.5rem}.w-16{width:4rem}.w-48{width:12rem}.w-64{width:16rem}.max-w-2xl{max-width:42rem}.max-w-7xl{max-width:80rem}.flex-1{flex:1 1 0%}.-translate-y-1\/2{--tw-translate-y:-50%;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}@keyframes bounce{0%, 100%{transform:translateY(-25%);animation-timing-function:cubic-bezier(0.8,0,1,1)}50%{transform:none;animation-timing-function:cubic-bezier(0,0,0.2,1)}}.animate-bounce{animation:bounce 1s infinite}.cursor-help{cursor:help}.grid-cols-1{grid-template-columns:repeat(1, minmax(0, 1fr))}.flex-col{flex-direction:column}.items-center{align-items:center}.justify-center{justify-content:center}.justify-between{justify-content:space-between}.gap-2{gap:0.5rem}.gap-4{gap:1rem}.gap-8{gap:2rem}.space-y-16 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(4rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(4rem * var(--tw-space-y-reverse))}.space-y-2 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(0.5rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(0.5rem * var(--tw-space-y-reverse))}.overflow-hidden{overflow:hidden}.overflow-y-auto{overflow-y:auto}.rounded{border-radius:0.25rem}.rounded-2xl{border-radius:1rem}.rounded-3xl{border-radius:1.5rem}.rounded-full{border-radius:9999px}.rounded-lg{border-radius:0.5rem}.rounded-xl{border-radius:0.75rem}.border{border-width:1px}.border-2{border-width:2px}.border-4{border-width:4px}.border-b{border-bottom-width:1px}.border-l-4{border-left-width:4px}.border-t{border-top-width:1px}.border-blue-500{--tw-border-opacity:1;border-color:rgb(59 130 246 / var(--tw-border-opacity, 1))}.border-purple-500{--tw-border-opacity:1;border-color:rgb(168 85 247 / var(--tw-border-opacity, 1))}.border-red-500{--tw-border-opacity:1;border-color:rgb(239 68 68 / var(--tw-border-opacity, 1))}.border-red-500\/50{border-color:rgb(239 68 68 / 0.5)}.border-slate-200{--tw-border-opacity:1;border-color:rgb(226 232 240 / var(--tw-border-opacity, 1))}.border-slate-500{--tw-border-opacity:1;border-color:rgb(100 116 139 / var(--tw-border-opacity, 1))}.border-slate-700{--tw-border-opacity:1;border-color:rgb(51 65 85 / var(--tw-border-opacity, 1))}.border-slate-800{--tw-border-opacity:1;border-color:rgb(30 41 59 / var(--tw-border-opacity, 1))}.bg-black{--tw-bg-opacity:1;background-color:rgb(0 0 0 / var(--tw-bg-opacity, 1))}.bg-black\/20{background-color:rgb(0 0 0 / 0.2)}.bg-green-500\/90{background-color:rgb(34 197 94 / 0.9)}.bg-green-600{--tw-bg-opacity:1;background-color:rgb(22 163 74 / var(--tw-bg-opacity, 1))}.bg-red-500\/20{background-color:rgb(239 68 68 / 0.2)}.bg-red-500\/90{background-color:rgb(239 68 68 / 0.9)}.bg-red-600{--tw-bg-opacity:1;background-color:rgb(220 38 38 / var(--tw-bg-opacity, 1))}.bg-slate-100{--tw-bg-opacity:1;background-color:rgb(241 245 249 / var(--tw-bg-opacity, 1))}.bg-slate-200{--tw-bg-opacity:1;background-color:rgb(226 232 240 / var(--tw-bg-opacity, 1))}.bg-slate-50{--tw-bg-opacity:1;background-color:rgb(248 250 252 / var(--tw-bg-opacity, 1))}.bg-slate-700{--tw-bg-opacity:1;background-color:rgb(51 65 85 / var(--tw-bg-opacity, 1))}.bg-slate-800{--tw-bg-opacity:1;background-color:rgb(30 41 59 / var(--tw-bg-opacity, 1))}.bg-slate-900{--tw-bg-opacity:1;background-color:rgb(15 23 42 / var(--tw-bg-opacity, 1))}.bg-white{--tw-bg-opacity:1;background-color:rgb(255 255 255 / var(--tw-bg-opacity, 1))}.bg-gradient-to-r{background-image:linear-gradient(to right, var(--tw-gradient-stops))}.from-red-400{--tw-gradient-from:#f87171 var(--tw-gradient-from-position);--tw-gradient-to:rgb(248 113 113 / 0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), var(--tw-gradient-to)}.to-orange-400{--tw-gradient-to:#fb923c var(--tw-gradient-to-position)}.bg-clip-text{-webkit-background-clip:text;background-clip:text}.p-1{padding:0.25rem}.p-2{padding:0.5rem}.p-4{padding:1rem}.p-6{padding:1.5rem}.p-8{padding:2rem}.px-2{padding-left:0.5rem;padding-right:0.5rem}.px-3{padding-left:0.75rem;padding-right:0.75rem}.px-4{padding-left:1rem;padding-right:1rem}.px-6{padding-left:1.5rem;padding-right:1.5rem}.px-8{padding-left:2rem;padding-right:2rem}.py-1{padding-top:0.25rem;padding-bottom:0.25rem}.py-12{padding-top:3rem;padding-bottom:3rem}.py-3{padding-top:0.75rem;padding-bottom:0.75rem}.py-4{padding-top:1rem;padding-bottom:1rem}.py-8{padding-top:2rem;padding-bottom:2rem}.pb-20{padding-bottom:5rem}.pl-4{padding-left:1rem}.pl-6{padding-left:1.5rem}.text-center{text-align:center}.font-mono{font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace}.text-2xl{font-size:1.5rem;line-height:2rem}.text-4xl{font-size:2.25rem;line-height:2.5rem}.text-6xl{font-size:3.75rem;line-height:1}.text-\[10px\]{font-size:10px}.text-sm{font-size:0.875rem;line-height:1.25rem}.text-xl{font-size:1.25rem;line-height:1.75rem}.text-xs{font-size:0.75rem;line-height:1rem}.font-bold{font-weight:700}.font-extrabold{font-weight:800}.font-semibold{font-weight:600}.uppercase{text-transform:uppercase}.leading-relaxed{line-height:1.625}.tracking-tight{letter-spacing:-0.025em}.tracking-wider{letter-spacing:0.05em}.text-blue-500{--tw-text-opacity:1;color:rgb(59 130 246 / var(--tw-text-opacity, 1))}.text-green-500{--tw-text-opacity:1;color:rgb(34 197 94 / var(--tw-text-opacity, 1))}.text-green-600{--tw-text-opacity:1;color:rgb(22 163 74 / var(--tw-text-opacity, 1))}.text-orange-500{--tw-text-opacity:1;color:rgb(249 115 22 / var(--tw-text-opacity, 1))}.text-purple-500{--tw-text-opacity:1;color:rgb(168 85 247 / var(--tw-text-opacity, 1))}.text-purple-600{--tw-text-opacity:1;color:rgb(147 51 234 / var(--tw-text-opacity, 1))}.text-red-100{--tw-text-opacity:1;color:rgb(254 226 226 / var(--tw-text-opacity, 1))}.text-red-300{--tw-text-opacity:1;color:rgb(252 165 165 / var(--tw-text-opacity, 1))}.text-red-400{--tw-text-opacity:1;color:rgb(248 113 113 / var(--tw-text-opacity, 1))}.text-red-500{--tw-text-opacity:1;color:rgb(239 68 68 / var(--tw-text-opacity, 1))}.text-slate-300{--tw-text-opacity:1;color:rgb(203 213 225 / var(--tw-text-opacity, 1))}.text-slate-400{--tw-text-opacity:1;color:rgb(148 163 184 / var(--tw-text-opacity, 1))}.text-slate-500{--tw-text-opacity:1;color:rgb(100 116 139 / var(--tw-text-opacity, 1))}.text-slate-600{--tw-text-opacity:1;color:rgb(71 85 105 / var(--tw-text-opacity, 1))}.text-slate-700{--tw-text-opacity:1;color:rgb(51 65 85 / var(--tw-text-opacity, 1))}.text-slate-800{--tw-text-opacity:1;color:rgb(30 41 59 / var(--tw-text-opacity, 1))}.text-slate-900{--tw-text-opacity:1;color:rgb(15 23 42 / var(--tw-text-opacity, 1))}.text-transparent{color:transparent}.text-white{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity, 1))}.opacity-0{opacity:0}.opacity-50{opacity:0.5}.shadow{--tw-shadow:0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);--tw-shadow-colored:0 1px 3px 0 var(--tw-shadow-color), 0 1px 2px -1px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.shadow-2xl{--tw-shadow:0 25px 50px -12px rgb(0 0 0 / 0.25);--tw-shadow-colored:0 25px 50px -12px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.shadow-lg{--tw-shadow:0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);--tw-shadow-colored:0 10px 15px -3px var(--tw-shadow-color), 0 4px 6px -4px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.shadow-sm{--tw-shadow:0 1px 2px 0 rgb(0 0 0 / 0.05);--tw-shadow-colored:0 1px 2px 0 var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.shadow-xl{--tw-shadow:0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);--tw-shadow-colored:0 20px 25px -5px var(--tw-shadow-color), 0 8px 10px -6px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.backdrop-blur-sm{--tw-backdrop-blur:blur(4px);-webkit-backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia)}.transition-all{transition-property:all;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.transition-colors{transition-property:color, background-color, border-color, fill, stroke, -webkit-text-decoration-color;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke, -webkit-text-decoration-color;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.transition-opacity{transition-property:opacity;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.transition-transform{transition-property:transform;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.duration-200{transition-duration:200ms}.duration-300{transition-duration:300ms}.duration-500{transition-duration:500ms}.hover\:scale-105:hover{--tw-scale-x:1.05;--tw-scale-y:1.05;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.hover\:bg-green-100:hover{--tw-bg-opacity:1;background-color:rgb(220 252 231 / var(--tw-bg-opacity, 1))}.hover\:bg-green-500:hover{--tw-bg-opacity:1;background-color:rgb(34 197 94 / var(--tw-bg-opacity, 1))}.hover\:bg-red-100:hover{--tw-bg-opacity:1;background-color:rgb(254 226 226 / var(--tw-bg-opacity, 1))}.hover\:bg-red-500:hover{--tw-bg-opacity:1;background-color:rgb(239 68 68 / var(--tw-bg-opacity, 1))}.hover\:bg-slate-800:hover{--tw-bg-opacity:1;background-color:rgb(30 41 59 / var(--tw-bg-opacity, 1))}.hover\:bg-white:hover{--tw-bg-opacity:1;background-color:rgb(255 255 255 / var(--tw-bg-opacity, 1))}.hover\:bg-slate-700:hover{--tw-bg-opacity:1;background-color:rgb(51 65 85 / var(--tw-bg-opacity, 1))}.hover\:text-green-600:hover{--tw-text-opacity:1;color:rgb(22 163 74 / var(--tw-text-opacity, 1))}.hover\:text-red-600:hover{--tw-text-opacity:1;color:rgb(220 38 38 / var(--tw-text-opacity, 1))}.active\:scale-95:active{--tw-scale-x:.95;--tw-scale-y:.95;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.group:hover .group-hover\:block{display:block}@keyframes bounce{0%, 100%{transform:translateY(-25%);animation-timing-function:cubic-bezier(0.8,0,1,1)}50%{transform:none;animation-timing-function:cubic-bezier(0,0,0.2,1)}}.group:hover .group-hover\:animate-bounce{animation:bounce 1s infinite}@media (min-width: 768px){.md\:col-span-2{grid-column:span 2 / span 2}.md\:grid-cols-3{grid-template-columns:repeat(3, minmax(0, 1fr))}.md\:text-6xl{font-size:3.75rem;line-height:1}}@media (min-width: 1024px){.lg\:grid-cols-2{grid-template-columns:repeat(2, minmax(0, 1fr))}}</style></head>
+<body class="bg-slate-50 text-slate-800 pb-20">
+
+    <!-- Hero Section -->
+    <header class="bg-slate-900 text-white border-b border-slate-700">
+        <div class="max-w-7xl mx-auto px-4 py-12 text-center">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-red-500/20 border border-red-500/50 text-red-300 text-xs font-bold uppercase tracking-wider mb-4">
+                <span class="material-symbols-outlined text-sm">bug_report</span>
+                Robust Software Design
+            </div>
+            <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight mb-6">
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-red-400 to-orange-400">Error Handling</span>
+            </h1>
+            <p class="text-xl text-slate-400 max-w-2xl mx-auto">
+                Things <em>will</em> go wrong. Servers crash, databases timeout, and users send bad data. <br>
+                <strong>Error Handling</strong> is the art of failing gracefully instead of blowing up.
+            </p>
+        </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-4 -mt-8 relative z-10 space-y-16">
+
+        <!-- SECTION 1: Try-Catch Simulator -->
+        <section class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            <!-- Unsafe Code -->
+            <div class="bg-white rounded-2xl shadow-xl border border-slate-200 overflow-hidden flex flex-col transition-colors duration-300" id="box-unsafe">
+                <div class="bg-slate-50 p-4 border-b border-slate-200 flex justify-between items-center">
+                    <h3 class="font-bold text-slate-700 flex items-center gap-2">
+                        <span class="material-symbols-outlined text-red-500">dangerous</span> Unsafe Code
+                    </h3>
+                    <button onclick="runUnsafe()" class="px-3 py-1 bg-slate-200 hover:bg-red-100 text-slate-600 hover:text-red-600 rounded text-xs font-bold transition-colors">Run Unsafe</button>
+                </div>
+                <div class="p-6 font-mono text-sm space-y-2 flex-1 relative">
+                    <div id="u-line-1" class="p-1 rounded">1. print("App Started")</div>
+                    <div id="u-line-2" class="p-1 rounded">2. data = get_user_input()</div>
+                    <div id="u-line-3" class="p-1 rounded">3. result = 100 / data <span class="text-slate-400">// data is 0</span></div>
+                    <div id="u-line-4" class="p-1 rounded">4. print("Success!")</div>
+                    
+                    <!-- Crash Overlay -->
+                    <div id="overlay-crash" class="absolute inset-0 bg-red-500/90 flex flex-col items-center justify-center text-white opacity-0 pointer-events-none transition-opacity duration-200 backdrop-blur-sm">
+                        <span class="material-symbols-outlined text-6xl mb-2 animate-bounce">warning</span>
+                        <h2 class="text-2xl font-bold">CRASHED</h2>
+                        <p class="text-sm font-mono bg-black/20 px-2 py-1 rounded mt-2">ZeroDivisionError</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Safe Code (Try-Catch) -->
+            <div class="bg-white rounded-2xl shadow-xl border border-slate-200 overflow-hidden flex flex-col" id="box-safe">
+                <div class="bg-slate-50 p-4 border-b border-slate-200 flex justify-between items-center">
+                    <h3 class="font-bold text-slate-700 flex items-center gap-2">
+                        <span class="material-symbols-outlined text-green-500">verified_user</span> Safe Code (Try-Catch)
+                    </h3>
+                    <button onclick="runSafe()" class="px-3 py-1 bg-slate-200 hover:bg-green-100 text-slate-600 hover:text-green-600 rounded text-xs font-bold transition-colors">Run Safe</button>
+                </div>
+                <div class="p-6 font-mono text-sm space-y-2 flex-1 relative">
+                    <div id="s-line-1" class="p-1 rounded"><span class="text-purple-600 font-bold">try:</span></div>
+                    <div id="s-line-2" class="p-1 rounded pl-6">print("App Started")</div>
+                    <div id="s-line-3" class="p-1 rounded pl-6">result = 100 / 0</div>
+                    <div id="s-line-4" class="p-1 rounded pl-6">print("Success!")</div>
+                    <div id="s-line-5" class="p-1 rounded"><span class="text-purple-600 font-bold">catch (Error e):</span></div>
+                    <div id="s-line-6" class="p-1 rounded pl-6">print("Caught Error!")</div>
+                    <div id="s-line-7" class="p-1 rounded pl-6">log_error(e)</div>
+                    
+                    <!-- Success Overlay -->
+                    <div id="overlay-safe" class="absolute inset-0 bg-green-500/90 flex flex-col items-center justify-center text-white opacity-0 pointer-events-none transition-opacity duration-200 backdrop-blur-sm">
+                        <span class="material-symbols-outlined text-6xl mb-2">shield</span>
+                        <h2 class="text-2xl font-bold">SAVED</h2>
+                        <p class="text-sm">App continues running.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 2: Global Error Middleware (Express Style) -->
+        <section class="bg-slate-900 rounded-2xl shadow-xl border border-slate-800 p-8 overflow-hidden relative">
+            <div class="absolute top-4 right-4 text-xs font-bold uppercase text-slate-500 tracking-wider">Middleware Pipeline</div>
+            <h2 class="text-2xl font-bold text-white mb-8">Bubbling Up: Global Error Handling</h2>
+            
+            <!-- Pipeline -->
+            <div class="relative flex justify-between items-center h-48 px-8">
+                <!-- Background Line -->
+                <div class="absolute left-12 right-12 h-2 bg-slate-700 rounded-full z-0"></div>
+
+                <!-- Stations -->
+                <div class="relative z-10 flex flex-col items-center gap-2">
+                    <div class="w-16 h-16 bg-slate-800 border-2 border-blue-500 rounded-xl flex items-center justify-center shadow-lg node" id="node-1">
+                        <span class="material-symbols-outlined text-blue-500">input</span>
+                    </div>
+                    <span class="text-xs text-slate-400 font-bold">Request</span>
+                </div>
+
+                <div class="relative z-10 flex flex-col items-center gap-2">
+                    <div class="w-16 h-16 bg-slate-800 border-2 border-purple-500 rounded-xl flex items-center justify-center shadow-lg node" id="node-2">
+                        <span class="material-symbols-outlined text-purple-500">settings</span>
+                    </div>
+                    <span class="text-xs text-slate-400 font-bold">Controller</span>
+                </div>
+
+                <div class="relative z-10 flex flex-col items-center gap-2 opacity-50 transition-opacity" id="node-3-container">
+                    <div class="w-16 h-16 bg-slate-800 border-2 border-slate-500 rounded-xl flex items-center justify-center shadow-lg node" id="node-3">
+                        <span class="material-symbols-outlined text-slate-500">check_circle</span>
+                    </div>
+                    <span class="text-xs text-slate-400 font-bold">Post-Process</span>
+                </div>
+
+                <div class="relative z-10 flex flex-col items-center gap-2">
+                    <div class="w-16 h-16 bg-slate-800 border-2 border-red-500 rounded-xl flex items-center justify-center shadow-lg node" id="node-4">
+                        <span class="material-symbols-outlined text-red-500">medical_services</span>
+                    </div>
+                    <span class="text-xs text-slate-400 font-bold">Error Handler</span>
+                </div>
+
+                <!-- Packet -->
+                <div class="absolute left-12 top-1/2 -translate-y-1/2 w-10 h-10 bg-white rounded-full shadow-lg z-20 flex items-center justify-center transition-all duration-500" id="pipeline-packet">
+                    <span class="material-symbols-outlined text-sm font-bold text-slate-900">http</span>
+                </div>
+            </div>
+
+            <!-- Controls -->
+            <div class="flex justify-center gap-4 mt-8">
+                <button onclick="runPipeline(false)" class="bg-green-600 hover:bg-green-500 text-white px-6 py-3 rounded-lg font-bold flex items-center gap-2 transition-transform active:scale-95">
+                    <span class="material-symbols-outlined">check</span> Simulate Success
+                </button>
+                <button onclick="runPipeline(true)" class="bg-red-600 hover:bg-red-500 text-white px-6 py-3 rounded-lg font-bold flex items-center gap-2 transition-transform active:scale-95">
+                    <span class="material-symbols-outlined">error</span> Simulate Error
+                </button>
+            </div>
+            
+            <!-- Log -->
+            <div class="mt-6 bg-black rounded-lg p-4 font-mono text-xs h-24 overflow-y-auto" id="pipeline-log">
+                <div class="text-slate-500">// System Ready. Waiting for request...</div>
+            </div>
+        </section>
+
+        <!-- SECTION 3: Anatomy of a Stack Trace -->
+        <section class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="md:col-span-2 bg-slate-800 rounded-xl p-6 shadow-lg border border-slate-700">
+                <div class="flex items-center gap-2 mb-4">
+                    <span class="material-symbols-outlined text-red-400">terminal</span>
+                    <h3 class="text-white font-bold">Anatomy of a Stack Trace</h3>
+                </div>
+                <p class="text-slate-400 text-sm mb-4">Hover over the lines below to translate "computer speak" into human concepts.</p>
+                
+                <div class="bg-slate-900 p-4 rounded-lg font-mono text-xs text-red-300 leading-relaxed border-l-4 border-red-500">
+                    <div class="mb-2 font-bold text-red-100 group relative cursor-help">
+                        ReferenceError: getUser is not defined
+                        <div class="absolute left-0 -top-12 bg-white text-slate-800 p-2 rounded shadow-xl text-[10px] w-64 hidden group-hover:block z-10 pointer-events-none">
+                            <strong>The "What":</strong> The exact type of error (ReferenceError) and a specific message describing the problem.
+                        </div>
+                    </div>
+                    <div class="trace-line text-slate-400 pl-4 relative group">
+                        at LoginController (/app/controllers/auth.js:24:5)
+                        <div class="absolute left-0 -top-12 bg-white text-slate-800 p-2 rounded shadow-xl text-[10px] w-64 hidden group-hover:block z-10 pointer-events-none">
+                            <strong>The "Where":</strong> The file name (auth.js) and exactly where to look (Line 24, Character 5).
+                        </div>
+                    </div>
+                    <div class="trace-line text-slate-500 pl-4 relative group">
+                        at Layer.handle [as handle_request] (/app/node_modules/express/lib/router/layer.js:95:5)
+                        <div class="absolute left-0 -top-12 bg-white text-slate-800 p-2 rounded shadow-xl text-[10px] w-64 hidden group-hover:block z-10 pointer-events-none">
+                            <strong>Internal Code:</strong> This is inside a library (Express). You usually ignore 'node_modules' lines.
+                        </div>
+                    </div>
+                    <div class="trace-line text-slate-500 pl-4">at next (/app/node_modules/express/lib/router/route.js:137:13)</div>
+                    <div class="trace-line text-slate-500 pl-4">at Route.dispatch (/app/node_modules/express/lib/router/route.js:112:3)</div>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-xl p-6 shadow-sm border border-slate-200">
+                <h3 class="font-bold text-slate-800 mb-4 flex items-center gap-2">
+                    <span class="material-symbols-outlined text-orange-500">visibility</span>
+                    User Experience
+                </h3>
+                <p class="text-sm text-slate-600 mb-4">
+                    Never show stack traces to users! It's scary and a security risk.
+                </p>
+                
+                <!-- Toggle UX -->
+                <div class="bg-slate-100 rounded-lg p-1 flex mb-4">
+                    <button onclick="setUX('bad')" id="btn-bad" class="flex-1 py-1 text-xs font-bold rounded text-slate-500 hover:bg-white transition-all">Bad UX</button>
+                    <button onclick="setUX('good')" id="btn-good" class="flex-1 py-1 text-xs font-bold rounded bg-white shadow text-green-600 transition-all">Good UX</button>
+                </div>
+
+                <!-- Mock Phone Screen -->
+                <div class="bg-black rounded-3xl p-2 w-48 mx-auto border-4 border-slate-800 shadow-xl">
+                    <div class="bg-white rounded-2xl h-64 overflow-hidden relative flex flex-col items-center justify-center p-4 text-center" id="ux-screen">
+                    <div class="text-slate-800 animate-in fade-in zoom-in duration-300">
+                        <span class="material-symbols-outlined text-4xl text-slate-300 mb-2">cloud_off</span>
+                        <h4 class="font-bold text-sm">Oops!</h4>
+                        <p class="text-[10px] text-slate-500 mt-1">Something went wrong. We're looking into it.</p>
+                        <button class="mt-3 px-3 py-1 bg-slate-800 text-white text-[10px] rounded-full hover:bg-slate-700 transition-colors">Retry</button>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="text-center py-8 text-slate-400 text-sm mt-12 border-t border-slate-200">
+        Debugging Fundamentals © 2025
+    </footer>
+    
+    <!-- Download Button -->
+    <div class="fixed bottom-6 right-6 z-50">
+        <button onclick="downloadPage()" class="flex items-center gap-2 bg-slate-900 hover:bg-slate-800 text-white px-6 py-4 rounded-full shadow-2xl transition-all hover:scale-105 group font-semibold border-2 border-slate-700">
+            <span class="material-symbols-outlined group-hover:animate-bounce">download</span>
+            <span>Download Offline Copy</span>
+        </button>
+    </div>
+
+    <script>
+        // --- Try-Catch Simulator ---
+        async function runUnsafe() {
+            resetBox('u');
+            const box = document.getElementById('box-unsafe');
+            const overlay = document.getElementById('overlay-crash');
+            
+            // Line 1
+            highlight('u', 1); await wait(500);
+            // Line 2
+            highlight('u', 2); await wait(500);
+            // Line 3 (Error)
+            highlight('u', 3, true); 
+            box.classList.add('crash-effect'); // Shake & Red
+            
+            await wait(200);
+            overlay.classList.remove('opacity-0', 'pointer-events-none');
+            
+            // Line 4 never happens
+        }
+
+        async function runSafe() {
+            resetBox('s');
+            const overlay = document.getElementById('overlay-safe');
+
+            // Line 1 (Try)
+            highlight('s', 1); await wait(400);
+            // Line 2
+            highlight('s', 2); await wait(400);
+            // Line 3 (Error) - but caught!
+            highlight('s', 3, true); await wait(400);
+            
+            // JUMP TO CATCH
+            highlight('s', 5, false, true); await wait(400);
+            highlight('s', 6); await wait(400);
+            highlight('s', 7); 
+            
+            await wait(200);
+            overlay.classList.remove('opacity-0', 'pointer-events-none');
+        }
+
+        function highlight(prefix, lineNum, isError = false, isCatch = false) {
+            // clear previous
+            for(let i=1; i<=7; i++) {
+                const el = document.getElementById(`${prefix}-line-${i}`);
+                if(el) el.className = "p-1 rounded " + (i > 1 && prefix === 's' ? 'pl-6' : '');
+            }
+            
+            const el = document.getElementById(`${prefix}-line-${lineNum}`);
+            if (isError) el.classList.add('line-error');
+            else if (isCatch) el.classList.add('line-catch');
+            else el.classList.add('line-highlight');
+        }
+
+        function resetBox(prefix) {
+            // Reset styles
+            document.getElementById('box-unsafe').classList.remove('crash-effect');
+            document.getElementById('overlay-crash').classList.add('opacity-0', 'pointer-events-none');
+            document.getElementById('overlay-safe').classList.add('opacity-0', 'pointer-events-none');
+            
+            for(let i=1; i<=7; i++) {
+                const el = document.getElementById(`${prefix}-line-${i}`);
+                if(el) el.className = "p-1 rounded " + (i > 1 && prefix === 's' ? 'pl-6' : '');
+            }
+        }
+
+        // --- Pipeline Simulator ---
+        async function runPipeline(isError) {
+            const packet = document.getElementById('pipeline-packet');
+            const logEl = document.getElementById('pipeline-log');
+            const node3Container = document.getElementById('node-3-container');
+            const containerWidth = document.querySelector('.relative.flex').offsetWidth; // approx width
+
+            // Reset
+            packet.style.transition = 'none';
+            packet.style.left = '48px'; // Start
+            packet.className = "absolute top-1/2 -translate-y-1/2 w-10 h-10 bg-white rounded-full shadow-lg z-20 flex items-center justify-center";
+            packet.innerHTML = '<span class="material-symbols-outlined text-sm font-bold text-slate-900">http</span>';
+            node3Container.style.opacity = '1';
+            logEl.innerHTML = '';
+
+            const log = (msg, color='text-slate-400') => {
+                logEl.innerHTML += `<div class="${color}">${msg}</div>`;
+                logEl.scrollTop = logEl.scrollHeight;
+            };
+
+            await wait(100);
+            packet.style.transition = 'left 1s linear';
+            
+            // Move to Controller (approx 33%)
+            log("> Request entering Controller...");
+            packet.style.left = '33%';
+            await wait(1000);
+
+            if (isError) {
+                // EXPLODE
+                log("!! ERROR THROWN in Controller !!", "text-red-400 font-bold");
+                packet.classList.add('packet-error');
+                packet.innerHTML = '<span class="material-symbols-outlined text-white">bug_report</span>';
+                
+                // Dim Node 3 (Skip)
+                log("> Skipping normal middleware...");
+                node3Container.style.opacity = '0.2';
+                
+                // Move Fast to Error Handler
+                packet.style.transition = 'left 0.5s ease-in';
+                packet.style.left = '85%'; // End
+                await wait(500);
+                
+                log("> Caught by Global Error Handler.", "text-orange-400");
+                log("> Sending formatted 500 Response.", "text-green-400");
+            } else {
+                // Move to Post Process
+                log("> Controller Success. Next()...");
+                packet.style.left = '60%';
+                await wait(1000);
+                log("> Post-Processing...");
+                
+                // Move to End
+                packet.style.left = '85%';
+                await wait(1000);
+                log("> Sending 200 OK Response.", "text-green-400");
+            }
+        }
+
+        // --- UX Simulator ---
+        function setUX(type) {
+            const screen = document.getElementById('ux-screen');
+            const btnBad = document.getElementById('btn-bad');
+            const btnGood = document.getElementById('btn-good');
+
+            if (type === 'bad') {
+                btnBad.className = "flex-1 py-1 text-xs font-bold rounded bg-white shadow text-red-600 transition-all";
+                btnGood.className = "flex-1 py-1 text-xs font-bold rounded text-slate-500 hover:bg-white transition-all";
+                
+                screen.innerHTML = `
+                    <div class="text-left w-full h-full font-mono text-[8px] text-red-600 overflow-hidden leading-tight break-all">
+                        <strong>Error: Connection Timeout</strong><br>
+                        at Database.connect (/app/db.js:42)<br>
+                        at Controller.getUser (/app/auth.js:12)<br>
+                        at Layer.handle (/node_modules/express/..)<br>
+                        <br>
+                        MongoError: failed to connect to server [localhost:27017] on first connect [Error: connect ECONNREFUSED 127.0.0.1:27017]
+                    </div>
+                `;
+            } else {
+                btnGood.className = "flex-1 py-1 text-xs font-bold rounded bg-white shadow text-green-600 transition-all";
+                btnBad.className = "flex-1 py-1 text-xs font-bold rounded text-slate-500 hover:bg-white transition-all";
+                
+                screen.innerHTML = `
+                    <div class="text-slate-800 animate-in fade-in zoom-in duration-300">
+                        <span class="material-symbols-outlined text-4xl text-slate-300 mb-2">cloud_off</span>
+                        <h4 class="font-bold text-sm">Oops!</h4>
+                        <p class="text-[10px] text-slate-500 mt-1">Something went wrong. We're looking into it.</p>
+                        <button class="mt-3 px-3 py-1 bg-slate-800 text-white text-[10px] rounded-full hover:bg-slate-700 transition-colors">Retry</button>
+                    </div>
+                `;
+            }
+        }
+
+        function wait(ms) { return new Promise(r => setTimeout(r, ms)); }
+
+        function downloadPage() {
+            const htmlContent = document.documentElement.outerHTML;
+            const blob = new Blob([htmlContent], {type: 'text/html'});
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'error_handling_guide.html';
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+        }
+        
+        // Init
+        setUX('good');
+    </script>
+
+</body></html>
