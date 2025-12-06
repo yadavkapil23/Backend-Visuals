@@ -1,0 +1,437 @@
+<html lang="en"><head>
+
+<script class="injected-ffc2e83d85">
+(function(){'use strict';function q(b){var c=0;return function(){return c<b.length?{done:!1,value:b[c++]}:{done:!0}}}function t(b){var c=typeof Symbol!="undefined"&&Symbol.iterator&&b[Symbol.iterator];if(c)return c.call(b);if(typeof b.length=="number")return{next:q(b)};throw Error(String(b)+" is not an iterable or ArrayLike");}var u=typeof Object.defineProperties=="function"?Object.defineProperty:function(b,c,g){if(b==Array.prototype||b==Object.prototype)return b;b[c]=g.value;return b};
+function v(b){b=["object"==typeof globalThis&&globalThis,b,"object"==typeof window&&window,"object"==typeof self&&self,"object"==typeof global&&global];for(var c=0;c<b.length;++c){var g=b[c];if(g&&g.Math==Math)return g}throw Error("Cannot find global object");}var w=v(this);function x(b,c){if(c)a:{var g=w;b=b.split(".");for(var h=0;h<b.length-1;h++){var l=b[h];if(!(l in g))break a;g=g[l]}b=b[b.length-1];h=g[b];c=c(h);c!=h&&c!=null&&u(g,b,{configurable:!0,writable:!0,value:c})}}
+function y(){this.j=!1;this.g=null;this.u=void 0;this.h=1;this.v=this.l=0;this.i=null}function z(b){if(b.j)throw new TypeError("Generator is already running");b.j=!0}y.prototype.o=function(b){this.u=b};function A(b,c){b.i={I:c,J:!0};b.h=b.l||b.v}y.prototype.return=function(b){this.i={return:b};this.h=this.v};function B(b){this.g=new y;this.h=b}function E(b,c){z(b.g);var g=b.g.g;if(g)return F(b,"return"in g?g["return"]:function(h){return{value:h,done:!0}},c,b.g.return);b.g.return(c);return G(b)}
+function F(b,c,g,h){try{var l=c.call(b.g.g,g);if(!(l instanceof Object))throw new TypeError("Iterator result "+l+" is not an object");if(!l.done)return b.g.j=!1,l;var m=l.value}catch(f){return b.g.g=null,A(b.g,f),G(b)}b.g.g=null;h.call(b.g,m);return G(b)}function G(b){for(;b.g.h;)try{var c=b.h(b.g);if(c)return b.g.j=!1,{value:c.value,done:!1}}catch(g){b.g.u=void 0,A(b.g,g)}b.g.j=!1;if(b.g.i){c=b.g.i;b.g.i=null;if(c.J)throw c.I;return{value:c.return,done:!0}}return{value:void 0,done:!0}}
+function H(b){this.next=function(c){z(b.g);b.g.g?c=F(b,b.g.g.next,c,b.g.o):(b.g.o(c),c=G(b));return c};this.throw=function(c){z(b.g);b.g.g?c=F(b,b.g.g["throw"],c,b.g.o):(A(b.g,c),c=G(b));return c};this.return=function(c){return E(b,c)};this[Symbol.iterator]=function(){return this}}function I(b){function c(h){return b.next(h)}function g(h){return b.throw(h)}return new Promise(function(h,l){function m(f){f.done?h(f.value):Promise.resolve(f.value).then(c,g).then(m,l)}m(b.next())})}
+x("Symbol",function(b){function c(m){if(this instanceof c)throw new TypeError("Symbol is not a constructor");return new g(h+(m||"")+"_"+l++,m)}function g(m,f){this.g=m;u(this,"description",{configurable:!0,writable:!0,value:f})}if(b)return b;g.prototype.toString=function(){return this.g};var h="jscomp_symbol_"+(Math.random()*1E9>>>0)+"_",l=0;return c});
+x("Symbol.iterator",function(b){if(b)return b;b=Symbol("Symbol.iterator");u(Array.prototype,b,{configurable:!0,writable:!0,value:function(){return J(q(this))}});return b});function J(b){b={next:b};b[Symbol.iterator]=function(){return this};return b}
+x("Promise",function(b){function c(f){this.h=0;this.i=void 0;this.g=[];this.u=!1;var a=this.j();try{f(a.resolve,a.reject)}catch(d){a.reject(d)}}function g(){this.g=null}function h(f){return f instanceof c?f:new c(function(a){a(f)})}if(b)return b;g.prototype.h=function(f){if(this.g==null){this.g=[];var a=this;this.i(function(){a.l()})}this.g.push(f)};var l=w.setTimeout;g.prototype.i=function(f){l(f,0)};g.prototype.l=function(){for(;this.g&&this.g.length;){var f=this.g;this.g=[];for(var a=0;a<f.length;++a){var d=
+f[a];f[a]=null;try{d()}catch(e){this.j(e)}}}this.g=null};g.prototype.j=function(f){this.i(function(){throw f;})};c.prototype.j=function(){function f(e){return function(k){d||(d=!0,e.call(a,k))}}var a=this,d=!1;return{resolve:f(this.D),reject:f(this.l)}};c.prototype.D=function(f){if(f===this)this.l(new TypeError("A Promise cannot resolve to itself"));else if(f instanceof c)this.G(f);else{a:switch(typeof f){case "object":var a=f!=null;break a;case "function":a=!0;break a;default:a=!1}a?this.C(f):this.o(f)}};
+c.prototype.C=function(f){var a=void 0;try{a=f.then}catch(d){this.l(d);return}typeof a=="function"?this.H(a,f):this.o(f)};c.prototype.l=function(f){this.v(2,f)};c.prototype.o=function(f){this.v(1,f)};c.prototype.v=function(f,a){if(this.h!=0)throw Error("Cannot settle("+f+", "+a+"): Promise already settled in state"+this.h);this.h=f;this.i=a;this.h===2&&this.F();this.K()};c.prototype.F=function(){var f=this;l(function(){if(f.B()){var a=w.console;typeof a!=="undefined"&&a.error(f.i)}},1)};c.prototype.B=
+function(){if(this.u)return!1;var f=w.CustomEvent,a=w.Event,d=w.dispatchEvent;if(typeof d==="undefined")return!0;typeof f==="function"?f=new f("unhandledrejection",{cancelable:!0}):typeof a==="function"?f=new a("unhandledrejection",{cancelable:!0}):(f=w.document.createEvent("CustomEvent"),f.initCustomEvent("unhandledrejection",!1,!0,f));f.promise=this;f.reason=this.i;return d(f)};c.prototype.K=function(){if(this.g!=null){for(var f=0;f<this.g.length;++f)m.h(this.g[f]);this.g=null}};var m=new g;c.prototype.G=
+function(f){var a=this.j();f.A(a.resolve,a.reject)};c.prototype.H=function(f,a){var d=this.j();try{f.call(a,d.resolve,d.reject)}catch(e){d.reject(e)}};c.prototype.then=function(f,a){function d(n,r){return typeof n=="function"?function(C){try{e(n(C))}catch(D){k(D)}}:r}var e,k,p=new c(function(n,r){e=n;k=r});this.A(d(f,e),d(a,k));return p};c.prototype.catch=function(f){return this.then(void 0,f)};c.prototype.A=function(f,a){function d(){switch(e.h){case 1:f(e.i);break;case 2:a(e.i);break;default:throw Error("Unexpected state: "+
+e.h);}}var e=this;this.g==null?m.h(d):this.g.push(d);this.u=!0};c.resolve=h;c.reject=function(f){return new c(function(a,d){d(f)})};c.race=function(f){return new c(function(a,d){for(var e=t(f),k=e.next();!k.done;k=e.next())h(k.value).A(a,d)})};c.all=function(f){var a=t(f),d=a.next();return d.done?h([]):new c(function(e,k){function p(C){return function(D){n[C]=D;r--;r==0&&e(n)}}var n=[],r=0;do n.push(void 0),r++,h(d.value).A(p(n.length-1),k),d=a.next();while(!d.done)})};return c});
+function K(b,c){return Object.prototype.hasOwnProperty.call(b,c)}x("Object.is",function(b){return b?b:function(c,g){return c===g?c!==0||1/c===1/g:c!==c&&g!==g}});x("Array.prototype.includes",function(b){return b?b:function(c,g){var h=this;h instanceof String&&(h=String(h));var l=h.length;g=g||0;for(g<0&&(g=Math.max(g+l,0));g<l;g++){var m=h[g];if(m===c||Object.is(m,c))return!0}return!1}});
+x("String.prototype.includes",function(b){return b?b:function(c,g){if(this==null)throw new TypeError("The 'this' value for String.prototype.includes must not be null or undefined");if(c instanceof RegExp)throw new TypeError("First argument to String.prototype.includes must not be a regular expression");return this.indexOf(c,g||0)!==-1}});
+x("WeakMap",function(b){function c(d){this.g=(a+=Math.random()+1).toString();if(d){d=t(d);for(var e;!(e=d.next()).done;)e=e.value,this.set(e[0],e[1])}}function g(){}function h(d){var e=typeof d;return e==="object"&&d!==null||e==="function"}function l(d){if(!K(d,f)){var e=new g;u(d,f,{value:e})}}function m(d){var e=Object[d];e&&(Object[d]=function(k){if(k instanceof g)return k;Object.isExtensible(k)&&l(k);return e(k)})}if(function(){if(!b||!Object.seal)return!1;try{var d=Object.seal({}),e=Object.seal({}),
+k=new b([[d,2],[e,3]]);if(k.get(d)!=2||k.get(e)!=3)return!1;k.delete(d);k.set(e,4);return!k.has(d)&&k.get(e)==4}catch(p){return!1}}())return b;var f="$jscomp_hidden_"+Math.random();m("freeze");m("preventExtensions");m("seal");var a=0;c.prototype.set=function(d,e){if(!h(d))throw Error("Invalid WeakMap key");l(d);if(!K(d,f))throw Error("WeakMap key fail: "+d);d[f][this.g]=e;return this};c.prototype.get=function(d){return h(d)&&K(d,f)?d[f][this.g]:void 0};c.prototype.has=function(d){return h(d)&&K(d,
+f)&&K(d[f],this.g)};c.prototype.delete=function(d){return h(d)&&K(d,f)&&K(d[f],this.g)?delete d[f][this.g]:!1};return c});
+x("Map",function(b){function c(){var a={};return a.m=a.next=a.head=a}function g(a,d){var e=a[1];return J(function(){if(e){for(;e.head!=a[1];)e=e.m;for(;e.next!=e.head;)return e=e.next,{done:!1,value:d(e)};e=null}return{done:!0,value:void 0}})}function h(a,d){var e=d&&typeof d;e=="object"||e=="function"?m.has(d)?e=m.get(d):(e=""+ ++f,m.set(d,e)):e="p_"+d;var k=a[0][e];if(k&&K(a[0],e))for(a=0;a<k.length;a++){var p=k[a];if(d!==d&&p.key!==p.key||d===p.key)return{id:e,list:k,index:a,entry:p}}return{id:e,
+list:k,index:-1,entry:void 0}}function l(a){this[0]={};this[1]=c();this.size=0;if(a){a=t(a);for(var d;!(d=a.next()).done;)d=d.value,this.set(d[0],d[1])}}if(function(){if(!b||typeof b!="function"||!b.prototype.entries||typeof Object.seal!="function")return!1;try{var a=Object.seal({x:4}),d=new b(t([[a,"s"]]));if(d.get(a)!="s"||d.size!=1||d.get({x:4})||d.set({x:4},"t")!=d||d.size!=2)return!1;var e=d.entries(),k=e.next();if(k.done||k.value[0]!=a||k.value[1]!="s")return!1;k=e.next();return k.done||k.value[0].x!=
+4||k.value[1]!="t"||!e.next().done?!1:!0}catch(p){return!1}}())return b;var m=new WeakMap;l.prototype.set=function(a,d){a=a===0?0:a;var e=h(this,a);e.list||(e.list=this[0][e.id]=[]);e.entry?e.entry.value=d:(e.entry={next:this[1],m:this[1].m,head:this[1],key:a,value:d},e.list.push(e.entry),this[1].m.next=e.entry,this[1].m=e.entry,this.size++);return this};l.prototype.delete=function(a){a=h(this,a);return a.entry&&a.list?(a.list.splice(a.index,1),a.list.length||delete this[0][a.id],a.entry.m.next=a.entry.next,
+a.entry.next.m=a.entry.m,a.entry.head=null,this.size--,!0):!1};l.prototype.clear=function(){this[0]={};this[1]=this[1].m=c();this.size=0};l.prototype.has=function(a){return!!h(this,a).entry};l.prototype.get=function(a){return(a=h(this,a).entry)&&a.value};l.prototype.entries=function(){return g(this,function(a){return[a.key,a.value]})};l.prototype.keys=function(){return g(this,function(a){return a.key})};l.prototype.values=function(){return g(this,function(a){return a.value})};l.prototype.forEach=
+function(a,d){for(var e=this.entries(),k;!(k=e.next()).done;)k=k.value,a.call(d,k[1],k[0],this)};l.prototype[Symbol.iterator]=l.prototype.entries;var f=0;return l});
+x("Set",function(b){function c(g){this.g=new Map;if(g){g=t(g);for(var h;!(h=g.next()).done;)this.add(h.value)}this.size=this.g.size}if(function(){if(!b||typeof b!="function"||!b.prototype.entries||typeof Object.seal!="function")return!1;try{var g=Object.seal({x:4}),h=new b(t([g]));if(!h.has(g)||h.size!=1||h.add(g)!=h||h.size!=1||h.add({x:4})!=h||h.size!=2)return!1;var l=h.entries(),m=l.next();if(m.done||m.value[0]!=g||m.value[1]!=g)return!1;m=l.next();return m.done||m.value[0]==g||m.value[0].x!=4||
+m.value[1]!=m.value[0]?!1:l.next().done}catch(f){return!1}}())return b;c.prototype.add=function(g){g=g===0?0:g;this.g.set(g,g);this.size=this.g.size;return this};c.prototype.delete=function(g){g=this.g.delete(g);this.size=this.g.size;return g};c.prototype.clear=function(){this.g.clear();this.size=0};c.prototype.has=function(g){return this.g.has(g)};c.prototype.entries=function(){return this.g.entries()};c.prototype.values=function(){return this.g.values()};c.prototype.keys=c.prototype.values;c.prototype[Symbol.iterator]=
+c.prototype.values;c.prototype.forEach=function(g,h){var l=this;this.g.forEach(function(m){return g.call(h,m,m,l)})};return c});(function(){function b(){return m?Promise.resolve(m):f?f:f=fetch("https://www.gstatic.com/bard-maui/resources/material-design-icon-names.804824289.json").then(function(a){if(!a.ok)throw Error("HTTP error! status: "+a.status+" fetching https://www.gstatic.com/bard-maui/resources/material-design-icon-names.804824289.json");return a.json()}).then(function(a){if(!Array.isArray(a))throw new TypeError("Fetched icon names from https://www.gstatic.com/bard-maui/resources/material-design-icon-names.804824289.json is not an array.");
+return m=a}).catch(function(a){console.error("IconChecker: Failed to load valid icon names from https://www.gstatic.com/bard-maui/resources/material-design-icon-names.804824289.json.",a);f=null;throw a;})}function c(a){var d,e,k,p;return I(new H(new B(function(n){switch(n.h){case 1:d=(a.textContent||"").trim();if(!d||a.classList.contains("js-replaced-missing-icon")&&d==="radio_button_unchecked")return n.return();e=window.getComputedStyle(a);if(e.display==="none"||e.visibility==="hidden")return n.return();
+n.l=2;var r=b();n.h=4;return{value:r};case 4:k=n.u;n.h=3;n.l=0;break;case 2:return n.l=0,n.i=null,console.warn('IconChecker: Skipping check for icon "'+d+'" as valid names could not be loaded.'),n.return();case 3:(p=k.includes(d))?a.classList.contains("js-replaced-missing-icon")&&a.classList.remove("js-replaced-missing-icon"):d==="radio_button_unchecked"&&a.classList.contains("js-replaced-missing-icon")||(a.textContent="radio_button_unchecked",a.classList.add("js-replaced-missing-icon")),n.h=0}})))}
+function g(a){a=a===void 0?document.body:a;a.querySelectorAll(l).forEach(function(d){c(d)})}function h(){b().catch(function(){});document.fonts.ready.then(function(){requestAnimationFrame(function(){g(document.body);(new MutationObserver(function(a){var d=new Set;a=t(a);for(var e=a.next();!e.done;e=a.next())if(e=e.value,e.type==="childList")e.addedNodes.forEach(function(p){p.nodeType===Node.ELEMENT_NODE&&(p.matches(l)&&d.add(p),p.querySelectorAll(l).forEach(function(n){d.add(n)}))});else if(e.type===
+"attributes"&&e.attributeName==="class"){var k=e.target;e.target.nodeType===Node.ELEMENT_NODE&&k.matches(l)&&d.add(k)}else e.type==="characterData"&&e.target.parentNode&&(e=e.target.parentNode,e.nodeType===Node.ELEMENT_NODE&&e.matches(l)&&d.add(e));d.size>0&&setTimeout(function(){d.forEach(function(p){c(p)})},500)})).observe(document.body,{childList:!0,subtree:!0,attributes:!0,attributeFilter:["class"],characterData:!0})})}).catch(function(a){console.error("IconChecker: Font loading error. Scanning icons anyway.",
+a);requestAnimationFrame(function(){g(document.body)})})}var l=["material-icons","material-symbols-outlined","material-symbols-rounded","material-symbols-sharp"].map(function(a){return"."+a}).join(","),m=null,f=null;document.readyState==="loading"?document.addEventListener("DOMContentLoaded",function(){h()}):h()})();}).call(this);
+
+</script>
+
+
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Web Routing: Interactive Simulator</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&amp;family=Inter:wght@400;600;700;800&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,1,0" rel="stylesheet">
+<style>
+        body { font-family: 'Inter', sans-serif; }
+        .font-mono { font-family: 'Fira Code', monospace; }
+        
+        /* Animations */
+        .page-transition {
+            animation: fadeIn 0.4s ease-out forwards;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .highlight-match {
+            animation: flash-border 1.5s ease-out infinite;
+        }
+        @keyframes flash-border {
+            0% { border-color: rgba(99, 102, 241, 0.2); box-shadow: 0 0 0 0 rgba(99, 102, 241, 0); }
+            50% { border-color: rgba(99, 102, 241, 1); box-shadow: 0 0 10px rgba(99, 102, 241, 0.3); }
+            100% { border-color: rgba(99, 102, 241, 0.2); box-shadow: 0 0 0 0 rgba(99, 102, 241, 0); }
+        }
+
+        .code-keyword { color: #c678dd; } /* purple */
+        .code-string { color: #98c379; } /* green */
+        .code-func { color: #61afef; } /* blue */
+        .code-param { color: #d19a66; } /* orange */
+        
+        @media print { .no-print { display: none; } }
+    </style>
+<style>*, ::before, ::after{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }::backdrop{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }/* ! tailwindcss v3.4.17 | MIT License | https://tailwindcss.com */*,::after,::before{box-sizing:border-box;border-width:0;border-style:solid;border-color:#e5e7eb}::after,::before{--tw-content:''}:host,html{line-height:1.5;-webkit-text-size-adjust:100%;-moz-tab-size:4;tab-size:4;font-family:ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";font-feature-settings:normal;font-variation-settings:normal;-webkit-tap-highlight-color:transparent}body{margin:0;line-height:inherit}hr{height:0;color:inherit;border-top-width:1px}abbr:where([title]){-webkit-text-decoration:underline dotted;text-decoration:underline dotted}h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit}a{color:inherit;text-decoration:inherit}b,strong{font-weight:bolder}code,kbd,pre,samp{font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;font-feature-settings:normal;font-variation-settings:normal;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}table{text-indent:0;border-color:inherit;border-collapse:collapse}button,input,optgroup,select,textarea{font-family:inherit;font-feature-settings:inherit;font-variation-settings:inherit;font-size:100%;font-weight:inherit;line-height:inherit;letter-spacing:inherit;color:inherit;margin:0;padding:0}button,select{text-transform:none}button,input:where([type=button]),input:where([type=reset]),input:where([type=submit]){-webkit-appearance:button;background-color:transparent;background-image:none}:-moz-focusring{outline:auto}:-moz-ui-invalid{box-shadow:none}progress{vertical-align:baseline}::-webkit-inner-spin-button,::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}blockquote,dd,dl,figure,h1,h2,h3,h4,h5,h6,hr,p,pre{margin:0}fieldset{margin:0;padding:0}legend{padding:0}menu,ol,ul{list-style:none;margin:0;padding:0}dialog{padding:0}textarea{resize:vertical}input::placeholder,textarea::placeholder{opacity:1;color:#9ca3af}[role=button],button{cursor:pointer}:disabled{cursor:default}audio,canvas,embed,iframe,img,object,svg,video{display:block;vertical-align:middle}img,video{max-width:100%;height:auto}[hidden]:where(:not([hidden=until-found])){display:none}.pointer-events-none{pointer-events:none}.fixed{position:fixed}.absolute{position:absolute}.relative{position:relative}.inset-0{inset:0px}.bottom-6{bottom:1.5rem}.right-4{right:1rem}.right-6{right:1.5rem}.top-4{top:1rem}.z-10{z-index:10}.z-20{z-index:20}.z-50{z-index:50}.mx-auto{margin-left:auto;margin-right:auto}.-mt-8{margin-top:-2rem}.mb-1{margin-bottom:0.25rem}.mb-2{margin-bottom:0.5rem}.mb-3{margin-bottom:0.75rem}.mb-4{margin-bottom:1rem}.mb-6{margin-bottom:1.5rem}.mt-12{margin-top:3rem}.mt-2{margin-top:0.5rem}.inline-block{display:inline-block}.flex{display:flex}.inline-flex{display:inline-flex}.grid{display:grid}.hidden{display:none}.h-3{height:0.75rem}.h-32{height:8rem}.h-auto{height:auto}.w-3{width:0.75rem}.max-w-2xl{max-width:42rem}.max-w-7xl{max-width:80rem}.flex-1{flex:1 1 0%}@keyframes bounce{0%, 100%{transform:translateY(-25%);animation-timing-function:cubic-bezier(0.8,0,1,1)}50%{transform:none;animation-timing-function:cubic-bezier(0,0,0.2,1)}}.animate-bounce{animation:bounce 1s infinite}.grid-cols-1{grid-template-columns:repeat(1, minmax(0, 1fr))}.flex-col{flex-direction:column}.items-center{align-items:center}.justify-center{justify-content:center}.justify-between{justify-content:space-between}.gap-1\.5{gap:0.375rem}.gap-2{gap:0.5rem}.gap-3{gap:0.75rem}.gap-4{gap:1rem}.gap-6{gap:1.5rem}.gap-8{gap:2rem}.space-y-12 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(3rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(3rem * var(--tw-space-y-reverse))}.overflow-hidden{overflow:hidden}.overflow-x-auto{overflow-x:auto}.overflow-y-auto{overflow-y:auto}.rounded{border-radius:0.25rem}.rounded-2xl{border-radius:1rem}.rounded-full{border-radius:9999px}.rounded-lg{border-radius:0.5rem}.rounded-md{border-radius:0.375rem}.rounded-xl{border-radius:0.75rem}.border{border-width:1px}.border-2{border-width:2px}.border-b{border-bottom-width:1px}.border-l-4{border-left-width:4px}.border-t{border-top-width:1px}.border-indigo-500\/50{border-color:rgb(99 102 241 / 0.5)}.border-slate-200{--tw-border-opacity:1;border-color:rgb(226 232 240 / var(--tw-border-opacity, 1))}.border-slate-300{--tw-border-opacity:1;border-color:rgb(203 213 225 / var(--tw-border-opacity, 1))}.border-slate-700{--tw-border-opacity:1;border-color:rgb(51 65 85 / var(--tw-border-opacity, 1))}.border-transparent{border-color:transparent}.border-green-400{--tw-border-opacity:1;border-color:rgb(74 222 128 / var(--tw-border-opacity, 1))}.bg-amber-400{--tw-bg-opacity:1;background-color:rgb(251 191 36 / var(--tw-bg-opacity, 1))}.bg-black{--tw-bg-opacity:1;background-color:rgb(0 0 0 / var(--tw-bg-opacity, 1))}.bg-green-400{--tw-bg-opacity:1;background-color:rgb(74 222 128 / var(--tw-bg-opacity, 1))}.bg-indigo-500\/20{background-color:rgb(99 102 241 / 0.2)}.bg-red-400{--tw-bg-opacity:1;background-color:rgb(248 113 113 / var(--tw-bg-opacity, 1))}.bg-slate-100{--tw-bg-opacity:1;background-color:rgb(241 245 249 / var(--tw-bg-opacity, 1))}.bg-slate-50{--tw-bg-opacity:1;background-color:rgb(248 250 252 / var(--tw-bg-opacity, 1))}.bg-slate-700\/50{background-color:rgb(51 65 85 / 0.5)}.bg-slate-800{--tw-bg-opacity:1;background-color:rgb(30 41 59 / var(--tw-bg-opacity, 1))}.bg-slate-900{--tw-bg-opacity:1;background-color:rgb(15 23 42 / var(--tw-bg-opacity, 1))}.bg-white{--tw-bg-opacity:1;background-color:rgb(255 255 255 / var(--tw-bg-opacity, 1))}.bg-indigo-100{--tw-bg-opacity:1;background-color:rgb(224 231 255 / var(--tw-bg-opacity, 1))}.bg-slate-700{--tw-bg-opacity:1;background-color:rgb(51 65 85 / var(--tw-bg-opacity, 1))}.bg-gradient-to-r{background-image:linear-gradient(to right, var(--tw-gradient-stops))}.from-indigo-400{--tw-gradient-from:#818cf8 var(--tw-gradient-from-position);--tw-gradient-to:rgb(129 140 248 / 0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), var(--tw-gradient-to)}.to-purple-400{--tw-gradient-to:#c084fc var(--tw-gradient-to-position)}.bg-clip-text{-webkit-background-clip:text;background-clip:text}.p-1\.5{padding:0.375rem}.p-3{padding:0.75rem}.p-4{padding:1rem}.p-6{padding:1.5rem}.p-8{padding:2rem}.px-3{padding-left:0.75rem;padding-right:0.75rem}.px-4{padding-left:1rem;padding-right:1rem}.px-6{padding-left:1.5rem;padding-right:1.5rem}.py-1{padding-top:0.25rem;padding-bottom:0.25rem}.py-1\.5{padding-top:0.375rem;padding-bottom:0.375rem}.py-12{padding-top:3rem;padding-bottom:3rem}.py-2{padding-top:0.5rem;padding-bottom:0.5rem}.py-4{padding-top:1rem;padding-bottom:1rem}.py-8{padding-top:2rem;padding-bottom:2rem}.pb-20{padding-bottom:5rem}.text-center{text-align:center}.font-mono{font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace}.text-4xl{font-size:2.25rem;line-height:2.5rem}.text-\[10px\]{font-size:10px}.text-lg{font-size:1.125rem;line-height:1.75rem}.text-sm{font-size:0.875rem;line-height:1.25rem}.text-xl{font-size:1.25rem;line-height:1.75rem}.text-xs{font-size:0.75rem;line-height:1rem}.text-3xl{font-size:1.875rem;line-height:2.25rem}.text-5xl{font-size:3rem;line-height:1}.font-bold{font-weight:700}.font-extrabold{font-weight:800}.font-semibold{font-weight:600}.uppercase{text-transform:uppercase}.leading-relaxed{line-height:1.625}.tracking-tight{letter-spacing:-0.025em}.tracking-wider{letter-spacing:0.05em}.text-green-400{--tw-text-opacity:1;color:rgb(74 222 128 / var(--tw-text-opacity, 1))}.text-indigo-300{--tw-text-opacity:1;color:rgb(165 180 252 / var(--tw-text-opacity, 1))}.text-indigo-500{--tw-text-opacity:1;color:rgb(99 102 241 / var(--tw-text-opacity, 1))}.text-orange-300{--tw-text-opacity:1;color:rgb(253 186 116 / var(--tw-text-opacity, 1))}.text-orange-400{--tw-text-opacity:1;color:rgb(251 146 60 / var(--tw-text-opacity, 1))}.text-orange-500{--tw-text-opacity:1;color:rgb(249 115 22 / var(--tw-text-opacity, 1))}.text-purple-400{--tw-text-opacity:1;color:rgb(192 132 252 / var(--tw-text-opacity, 1))}.text-red-400{--tw-text-opacity:1;color:rgb(248 113 113 / var(--tw-text-opacity, 1))}.text-red-500{--tw-text-opacity:1;color:rgb(239 68 68 / var(--tw-text-opacity, 1))}.text-slate-300{--tw-text-opacity:1;color:rgb(203 213 225 / var(--tw-text-opacity, 1))}.text-slate-400{--tw-text-opacity:1;color:rgb(148 163 184 / var(--tw-text-opacity, 1))}.text-slate-500{--tw-text-opacity:1;color:rgb(100 116 139 / var(--tw-text-opacity, 1))}.text-slate-600{--tw-text-opacity:1;color:rgb(71 85 105 / var(--tw-text-opacity, 1))}.text-slate-700{--tw-text-opacity:1;color:rgb(51 65 85 / var(--tw-text-opacity, 1))}.text-slate-800{--tw-text-opacity:1;color:rgb(30 41 59 / var(--tw-text-opacity, 1))}.text-transparent{color:transparent}.text-white{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity, 1))}.text-indigo-600{--tw-text-opacity:1;color:rgb(79 70 229 / var(--tw-text-opacity, 1))}.opacity-5{opacity:0.05}.shadow-2xl{--tw-shadow:0 25px 50px -12px rgb(0 0 0 / 0.25);--tw-shadow-colored:0 25px 50px -12px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.shadow-inner{--tw-shadow:inset 0 2px 4px 0 rgb(0 0 0 / 0.05);--tw-shadow-colored:inset 0 2px 4px 0 var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.shadow-lg{--tw-shadow:0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);--tw-shadow-colored:0 10px 15px -3px var(--tw-shadow-color), 0 4px 6px -4px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.shadow-sm{--tw-shadow:0 1px 2px 0 rgb(0 0 0 / 0.05);--tw-shadow-colored:0 1px 2px 0 var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.shadow-xl{--tw-shadow:0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);--tw-shadow-colored:0 20px 25px -5px var(--tw-shadow-color), 0 8px 10px -6px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.outline-none{outline:2px solid transparent;outline-offset:2px}.ring-indigo-500\/50{--tw-ring-color:rgb(99 102 241 / 0.5)}.transition-all{transition-property:all;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.transition-colors{transition-property:color, background-color, border-color, fill, stroke, -webkit-text-decoration-color;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke, -webkit-text-decoration-color;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.duration-300{transition-duration:300ms}.focus-within\:ring-2:focus-within{--tw-ring-offset-shadow:var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);--tw-ring-shadow:var(--tw-ring-inset) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color);box-shadow:var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000)}.hover\:scale-105:hover{--tw-scale-x:1.05;--tw-scale-y:1.05;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.hover\:bg-indigo-50:hover{--tw-bg-opacity:1;background-color:rgb(238 242 255 / var(--tw-bg-opacity, 1))}.hover\:bg-red-50:hover{--tw-bg-opacity:1;background-color:rgb(254 242 242 / var(--tw-bg-opacity, 1))}.hover\:bg-slate-800:hover{--tw-bg-opacity:1;background-color:rgb(30 41 59 / var(--tw-bg-opacity, 1))}.hover\:text-indigo-600:hover{--tw-text-opacity:1;color:rgb(79 70 229 / var(--tw-text-opacity, 1))}.hover\:text-red-600:hover{--tw-text-opacity:1;color:rgb(220 38 38 / var(--tw-text-opacity, 1))}.hover\:text-slate-600:hover{--tw-text-opacity:1;color:rgb(71 85 105 / var(--tw-text-opacity, 1))}@keyframes bounce{0%, 100%{transform:translateY(-25%);animation-timing-function:cubic-bezier(0.8,0,1,1)}50%{transform:none;animation-timing-function:cubic-bezier(0,0,0.2,1)}}.group:hover .group-hover\:animate-bounce{animation:bounce 1s infinite}@media (min-width: 768px){.md\:grid-cols-3{grid-template-columns:repeat(3, minmax(0, 1fr))}.md\:text-6xl{font-size:3.75rem;line-height:1}}@media (min-width: 1024px){.lg\:col-span-4{grid-column:span 4 / span 4}.lg\:col-span-8{grid-column:span 8 / span 8}.lg\:h-\[650px\]{height:650px}.lg\:grid-cols-12{grid-template-columns:repeat(12, minmax(0, 1fr))}}</style></head>
+<body class="bg-slate-50 text-slate-800 pb-20">
+<!-- Hero Section -->
+<header class="bg-slate-900 text-white border-b border-slate-700">
+<div class="max-w-7xl mx-auto px-4 py-12 text-center">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-indigo-500/20 border border-indigo-500/50 text-indigo-300 text-xs font-bold uppercase tracking-wider mb-4">
+<span class="material-symbols-outlined text-sm">alt_route</span>
+            Web Architecture
+        </div>
+<h1 class="text-4xl md:text-6xl font-extrabold tracking-tight mb-6">
+            Understanding <span class="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-purple-400">Routing</span>
+</h1>
+<p class="text-xl text-slate-400 max-w-2xl mx-auto">
+            Routing is the traffic cop of the web. It takes a <strong>URL</strong> (like <code>/profile</code>) and decides which <strong>Code</strong> to run or which <strong>Page</strong> to show.
+        </p>
+</div>
+</header>
+<!-- Main Content -->
+<main class="max-w-7xl mx-auto px-4 -mt-8 relative z-10 space-y-12">
+<!-- INTERACTIVE SIMULATOR -->
+<section class="grid grid-cols-1 lg:grid-cols-12 gap-6 h-auto lg:h-[650px]">
+<!-- LEFT: The "Router" (Logic) -->
+<div class="lg:col-span-4 bg-slate-800 rounded-2xl shadow-xl border border-slate-700 flex flex-col overflow-hidden">
+<div class="bg-slate-900 p-4 border-b border-slate-700 flex items-center justify-between">
+<h2 class="text-white font-bold flex items-center gap-2">
+<span class="material-symbols-outlined text-purple-400">settings_ethernet</span>
+                    Router Logic
+                </h2>
+<span class="text-[10px] uppercase text-slate-500 font-bold tracking-wider">Server / Client Code</span>
+</div>
+<div class="p-4 flex-1 flex flex-col gap-3 overflow-y-auto">
+<p class="text-xs text-slate-400 mb-2">The router checks these rules from top to bottom. The first one that matches the URL wins.</p>
+<!-- Rule 1: Home -->
+<div class="route-rule border-l-4 p-3 rounded transition-all duration-300 border-green-400 bg-slate-700 shadow-lg" id="rule-home">
+<div class="font-mono text-xs text-green-400 mb-1">path == "/"</div>
+<div class="text-xs text-white flex items-center gap-2">
+<span class="material-symbols-outlined text-sm animate-bounce">home</span> Render <strong>HomeComponent</strong>
+</div>
+</div>
+<!-- Rule 2: About -->
+<div class="route-rule bg-slate-700/50 border-l-4 border-transparent p-3 rounded transition-all duration-300" id="rule-about">
+<div class="font-mono text-xs text-green-400 mb-1">path == "/about"</div>
+<div class="text-xs text-white flex items-center gap-2">
+<span class="material-symbols-outlined text-sm">info</span> Render <strong>AboutComponent</strong>
+</div>
+</div>
+<!-- Rule 3: Dynamic User -->
+<div class="route-rule bg-slate-700/50 border-l-4 border-transparent p-3 rounded transition-all duration-300" id="rule-user">
+<div class="font-mono text-xs text-orange-400 mb-1">path matches "/users/:id"</div>
+<div class="text-xs text-white flex items-center gap-2">
+<span class="material-symbols-outlined text-sm">person</span> Render <strong>ProfileComponent</strong>
+</div>
+<div class="mt-2 text-[10px] text-slate-400 bg-slate-800 p-1.5 rounded hidden" id="param-extraction-display">
+                        Extracted Params: <span class="text-orange-300 font-mono" id="param-val">{ id: "..." }</span>
+</div>
+</div>
+<!-- Rule 4: 404 -->
+<div class="route-rule bg-slate-700/50 border-l-4 border-transparent p-3 rounded transition-all duration-300" id="rule-404">
+<div class="font-mono text-xs text-red-400 mb-1">* (Wildcard)</div>
+<div class="text-xs text-white flex items-center gap-2">
+<span class="material-symbols-outlined text-sm">error</span> Render <strong>NotFoundComponent</strong>
+</div>
+</div>
+</div>
+<!-- Console Log at bottom of left panel -->
+<div class="bg-black p-3 font-mono text-[10px] text-slate-400 h-32 overflow-y-auto border-t border-slate-700" id="router-logs">
+<div>&gt; Router initialized. Waiting for URL change...</div>
+<div><span class="text-slate-500">[6:36:06]</span> Navigating to: <span class="text-white">/</span></div><div class="text-green-400 font-bold"><span class="text-slate-500">[6:36:06]</span> Matched Rule: / (Home)</div></div>
+</div>
+<!-- RIGHT: The Browser (Visualization) -->
+<div class="lg:col-span-8 bg-white rounded-2xl shadow-xl border border-slate-200 flex flex-col overflow-hidden relative">
+<!-- Browser Chrome -->
+<div class="bg-slate-100 p-3 border-b border-slate-300 flex items-center gap-4">
+<!-- Traffic Lights -->
+<div class="flex gap-1.5">
+<div class="w-3 h-3 rounded-full bg-red-400"></div>
+<div class="w-3 h-3 rounded-full bg-amber-400"></div>
+<div class="w-3 h-3 rounded-full bg-green-400"></div>
+</div>
+<!-- Nav Buttons -->
+<div class="flex gap-2 text-slate-400">
+<button class="hover:text-slate-600"><span class="material-symbols-outlined text-lg">arrow_back</span></button>
+<button class="hover:text-slate-600"><span class="material-symbols-outlined text-lg">arrow_forward</span></button>
+<button class="hover:text-slate-600" onclick="navigateTo(currentPath)"><span class="material-symbols-outlined text-lg">refresh</span></button>
+</div>
+<!-- Address Bar -->
+<div class="flex-1 bg-white border border-slate-300 rounded-md px-3 py-1.5 flex items-center gap-2 shadow-inner group focus-within:ring-2 ring-indigo-500/50">
+<span class="text-slate-400 text-xs">https://myapp.com</span>
+<input class="flex-1 text-sm text-slate-700 outline-none font-mono" id="url-input" onkeypress="handleEnter(event)" type="text" value="/">
+</div>
+</div>
+<!-- Viewport (Content) -->
+<div class="flex-1 bg-slate-50 relative p-8 overflow-y-auto">
+<!-- Grid Background -->
+<div class="absolute inset-0 opacity-5 pointer-events-none" style="background-image: radial-gradient(#64748b 1px, transparent 1px); background-size: 20px 20px;"></div>
+<div class="relative z-10 max-w-2xl mx-auto" id="viewport-content">
+                <div class="page-transition text-center mt-12">
+                    <div class="inline-block p-4 bg-indigo-100 rounded-full text-indigo-600 mb-4">
+                        <span class="material-symbols-outlined text-5xl">home</span>
+                    </div>
+                    <h1 class="text-3xl font-bold text-slate-800 mb-2">Welcome Home</h1>
+                    <p class="text-slate-600">This is the landing page rendered by the path <code>/</code>.</p>
+                </div>
+            </div>
+</div>
+<!-- Quick Links Dock -->
+<div class="bg-white border-t border-slate-200 p-4 flex justify-center gap-4 shadow-lg z-20">
+<button class="px-4 py-2 rounded-lg bg-slate-100 hover:bg-indigo-50 hover:text-indigo-600 text-sm font-semibold transition-colors flex items-center gap-2" onclick="navigateTo('/')">
+<span class="material-symbols-outlined text-lg">home</span> Home
+                </button>
+<button class="px-4 py-2 rounded-lg bg-slate-100 hover:bg-indigo-50 hover:text-indigo-600 text-sm font-semibold transition-colors flex items-center gap-2" onclick="navigateTo('/about')">
+<span class="material-symbols-outlined text-lg">info</span> About
+                </button>
+<button class="px-4 py-2 rounded-lg bg-slate-100 hover:bg-indigo-50 hover:text-indigo-600 text-sm font-semibold transition-colors flex items-center gap-2" onclick="navigateTo('/users/42')">
+<span class="material-symbols-outlined text-lg">person</span> Profile (42)
+                </button>
+<button class="px-4 py-2 rounded-lg bg-slate-100 hover:bg-indigo-50 hover:text-indigo-600 text-sm font-semibold transition-colors flex items-center gap-2" onclick="navigateTo('/users/admin')">
+<span class="material-symbols-outlined text-lg">shield_person</span> Profile (Admin)
+                </button>
+<button class="px-4 py-2 rounded-lg bg-slate-100 hover:bg-red-50 hover:text-red-600 text-sm font-semibold transition-colors flex items-center gap-2" onclick="navigateTo('/random-page-123')">
+<span class="material-symbols-outlined text-lg">broken_image</span> Broken Link
+                </button>
+</div>
+</div>
+</section>
+<!-- Educational Cards -->
+<section class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<div class="bg-white p-6 rounded-xl shadow-sm border border-slate-200">
+<h3 class="font-bold text-slate-800 mb-3 flex items-center gap-2">
+<span class="material-symbols-outlined text-indigo-500">route</span> Static Routing
+            </h3>
+<p class="text-sm text-slate-600 leading-relaxed">
+                Directly mapping a fixed path to a page. <br>
+                Example: <code>/about</code> always loads the "About Us" page. It's exact and simple.
+            </p>
+</div>
+<div class="bg-white p-6 rounded-xl shadow-sm border border-slate-200">
+<h3 class="font-bold text-slate-800 mb-3 flex items-center gap-2">
+<span class="material-symbols-outlined text-orange-500">alt_route</span> Dynamic Routing
+            </h3>
+<p class="text-sm text-slate-600 leading-relaxed">
+                Using placeholders to handle unlimited variations. <br>
+                Example: <code>/users/:id</code> handles <code>/users/1</code>, <code>/users/bob</code>, etc. The router "captures" the dynamic part for code to use.
+            </p>
+</div>
+<div class="bg-white p-6 rounded-xl shadow-sm border border-slate-200">
+<h3 class="font-bold text-slate-800 mb-3 flex items-center gap-2">
+<span class="material-symbols-outlined text-red-500">search_off</span> 404 / Fallback
+            </h3>
+<p class="text-sm text-slate-600 leading-relaxed">
+                The safety net. If no other rules match the URL, the "Wildcard" (*) route catches it and displays an error page, preventing the app from crashing.
+            </p>
+</div>
+</section>
+<!-- Code Preview Section -->
+<section class="bg-slate-900 rounded-2xl p-8 overflow-hidden relative">
+<div class="absolute top-4 right-4 text-slate-500 text-xs font-bold uppercase tracking-wider">React Router Example</div>
+<pre class="font-mono text-sm text-slate-300 overflow-x-auto"><code>
+<span class="code-keyword">import</span> { BrowserRouter, Routes, Route } <span class="code-keyword">from</span> <span class="code-string">"react-router-dom"</span>;
+
+<span class="code-keyword">function</span> <span class="code-func">App</span>() {
+  <span class="code-keyword">return</span> (
+    <browserrouter>
+      <routes>
+        <span class="code-keyword"><route< span=""> <span class="code-param">path</span>=<span class="code-string">"/"</span> <span class="code-param">element</span>={<home>} /&gt;
+        <span class="code-keyword"><route< span=""> <span class="code-param">path</span>=<span class="code-string">"/about"</span> <span class="code-param">element</span>={<about>} /&gt;
+        
+        {<span class="text-slate-500">/* Dynamic Route: :id is a variable */</span>}
+        <span class="code-keyword"><route< span=""> <span class="code-param">path</span>=<span class="code-string">"/users/:id"</span> <span class="code-param">element</span>={<profile>} /&gt;
+        
+        {<span class="text-slate-500">/* Fallback Route */</span>}
+        <span class="code-keyword"><route< span=""> <span class="code-param">path</span>=<span class="code-string">"*"</span> <span class="code-param">element</span>={<notfound>} /&gt;
+      </notfound></route<></span></profile></route<></span></about></route<></span></home></route<></span></routes>
+    </browserrouter>
+  );
+}
+    </code></pre>
+</section>
+</main>
+<!-- Footer -->
+<footer class="text-center py-8 text-slate-400 text-sm mt-12">
+        Web Development Fundamentals © 2025
+    </footer>
+<!-- Download Button -->
+<div class="fixed bottom-6 right-6 z-50">
+<button class="flex items-center gap-2 bg-slate-900 hover:bg-slate-800 text-white px-6 py-4 rounded-full shadow-2xl transition-all hover:scale-105 group font-semibold border-2 border-slate-700" onclick="downloadPage()">
+<span class="material-symbols-outlined group-hover:animate-bounce">download</span>
+<span>Download Offline Copy</span>
+</button>
+</div>
+<script>
+        let currentPath = "/";
+
+        const viewport = document.getElementById('viewport-content');
+        const urlInput = document.getElementById('url-input');
+        const logger = document.getElementById('router-logs');
+
+        // Render Templates
+        const components = {
+            home: `
+                <div class="page-transition text-center mt-12">
+                    <div class="inline-block p-4 bg-indigo-100 rounded-full text-indigo-600 mb-4">
+                        <span class="material-symbols-outlined text-5xl">home</span>
+                    </div>
+                    <h1 class="text-3xl font-bold text-slate-800 mb-2">Welcome Home</h1>
+                    <p class="text-slate-600">This is the landing page rendered by the path <code>/</code>.</p>
+                </div>
+            `,
+            about: `
+                <div class="page-transition">
+                    <h1 class="text-3xl font-bold text-slate-800 mb-6 flex items-center gap-2">
+                        <span class="material-symbols-outlined text-blue-500">info</span> About Us
+                    </h1>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-slate-200">
+                        <p class="text-slate-600 mb-4">We are a company that loves routing!</p>
+                        <div class="h-2 bg-slate-100 rounded mb-2 w-3/4"></div>
+                        <div class="h-2 bg-slate-100 rounded mb-2 w-full"></div>
+                        <div class="h-2 bg-slate-100 rounded w-1/2"></div>
+                    </div>
+                </div>
+            `,
+            profile: (id) => `
+                <div class="page-transition">
+                    <div class="bg-white rounded-xl shadow-lg border border-slate-200 overflow-hidden">
+                        <div class="h-24 bg-gradient-to-r from-orange-400 to-pink-500"></div>
+                        <div class="px-6 pb-6 relative">
+                            <div class="w-20 h-20 bg-white rounded-full p-1 absolute -top-10 shadow-md">
+                                <div class="w-full h-full bg-slate-200 rounded-full flex items-center justify-center text-slate-400">
+                                    <span class="material-symbols-outlined text-4xl">person</span>
+                                </div>
+                            </div>
+                            <div class="mt-12">
+                                <h1 class="text-2xl font-bold text-slate-800">User Profile</h1>
+                                <div class="inline-block bg-orange-100 text-orange-800 text-xs font-mono px-2 py-1 rounded mt-2">ID: ${id}</div>
+                                <p class="text-slate-600 mt-4 text-sm">
+                                    The router extracted <strong>${id}</strong> from the URL to fetch this specific user's data.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `,
+            notFound: `
+                <div class="page-transition text-center mt-16">
+                    <span class="material-symbols-outlined text-6xl text-slate-300 mb-4">sentiment_dissatisfied</span>
+                    <h1 class="text-4xl font-bold text-slate-800 mb-2">404</h1>
+                    <p class="text-slate-500 font-mono">Page Not Found</p>
+                    <p class="text-sm text-red-500 mt-4 bg-red-50 inline-block px-3 py-1 rounded border border-red-100">
+                        No route matched the path.
+                    </p>
+                </div>
+            `
+        };
+
+        function handleEnter(e) {
+            if (e.key === 'Enter') {
+                navigateTo(urlInput.value);
+            }
+        }
+
+        function log(msg, type='info') {
+            const div = document.createElement('div');
+            const time = new Date().toLocaleTimeString().split(' ')[0];
+            div.innerHTML = `<span class="text-slate-500">[${time}]</span> ${msg}`;
+            if(type === 'match') div.className = "text-green-400 font-bold";
+            if(type === 'error') div.className = "text-red-400";
+            
+            logger.appendChild(div);
+            logger.scrollTop = logger.scrollHeight;
+        }
+
+        function highlightRule(id) {
+            // Remove highlighting
+            document.querySelectorAll('.route-rule').forEach(el => {
+                el.classList.remove('border-green-400', 'bg-slate-700', 'shadow-lg');
+                el.classList.add('border-transparent', 'bg-slate-700/50');
+            });
+            document.querySelectorAll('.route-rule .material-symbols-outlined').forEach(icon => {
+                icon.classList.remove('animate-bounce');
+            });
+
+            // Add highlight
+            const el = document.getElementById(id);
+            if(el) {
+                el.classList.remove('border-transparent', 'bg-slate-700/50');
+                el.classList.add('border-green-400', 'bg-slate-700', 'shadow-lg');
+                
+                // Bounce icon
+                const icon = el.querySelector('.material-symbols-outlined');
+                if(icon) icon.classList.add('animate-bounce');
+            }
+        }
+
+        function navigateTo(path) {
+            // Normalize path
+            if (!path.startsWith('/')) path = '/' + path;
+            
+            currentPath = path;
+            urlInput.value = path;
+            log(`Navigating to: <span class="text-white">${path}</span>`);
+
+            // --- ROUTER LOGIC SIMULATION ---
+            
+            // 1. Check exact matches first
+            if (path === '/') {
+                highlightRule('rule-home');
+                viewport.innerHTML = components.home;
+                log('Matched Rule: / (Home)', 'match');
+                document.getElementById('param-extraction-display').classList.add('hidden');
+                return;
+            }
+
+            if (path === '/about') {
+                highlightRule('rule-about');
+                viewport.innerHTML = components.about;
+                log('Matched Rule: /about', 'match');
+                document.getElementById('param-extraction-display').classList.add('hidden');
+                return;
+            }
+
+            // 2. Check Dynamic Patterns (Regex-ish)
+            // Pattern: /users/:id
+            const userMatch = path.match(/^\/users\/([a-zA-Z0-9-_]+)$/);
+            if (userMatch) {
+                const userId = userMatch[1];
+                highlightRule('rule-user');
+                viewport.innerHTML = components.profile(userId);
+                
+                // Show param extraction in UI
+                const paramDisplay = document.getElementById('param-extraction-display');
+                const paramVal = document.getElementById('param-val');
+                paramDisplay.classList.remove('hidden');
+                paramVal.textContent = `{ id: "${userId}" }`;
+                
+                log(`Matched Rule: /users/:id (Extracted id="${userId}")`, 'match');
+                return;
+            }
+
+            // 3. Fallback (404)
+            highlightRule('rule-404');
+            viewport.innerHTML = components.notFound;
+            log('No match found. Falling back to Wildcard (*)', 'error');
+            document.getElementById('param-extraction-display').classList.add('hidden');
+        }
+
+        function downloadPage() {
+            const htmlContent = document.documentElement.outerHTML;
+            const blob = new Blob([htmlContent], {type: 'text/html'});
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'routing_simulator.html';
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+        }
+
+        // Init
+        navigateTo('/');
+
+    </script>
+
+</body></html>
